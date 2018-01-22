@@ -1,23 +1,17 @@
 <template>
 	<div class="index">
-		<h1>hello</h1>
-      <Button>默认按钮</Button>
+		<h1>hello</h1> 
 	</div>
 </template>
-<script> 
-import axios from 'axios'
-import { Button, Select } from 'element-ui'
+<script>  
 export default {
   data() {
     return {};
   },
   methods: {},
-  created() {
-	  axios.get("/stone/api").then((res)=>{
-		  console.log(res)
-	  })
+  created() { 
   },
-  components: {Button} 
+  components: {} 
 };
 </script>
 <style  lang="less">
