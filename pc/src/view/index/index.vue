@@ -1,10 +1,12 @@
 <template>
 	<div class="index">
 		<h1>hello</h1>
+      <Button>默认按钮</Button>
 	</div>
 </template>
 <script> 
 import axios from 'axios'
+import { Button, Select } from 'element-ui'
 export default {
   data() {
     return {};
@@ -15,7 +17,7 @@ export default {
 		  console.log(res)
 	  })
   },
-  components: {} 
+  components: {Button} 
 };
 </script>
 <style  lang="less">
