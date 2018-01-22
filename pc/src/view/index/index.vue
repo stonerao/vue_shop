@@ -1,6 +1,6 @@
 <template>
 	<div class="index">
-		<h1>hello</h1> 
+		<h1>从这里开始</h1> 
 	</div>
 </template>
 <script>  

@@ -25,15 +25,11 @@ axios.defaults.transformRequest = [function(data) {
 }]
 Vue.prototype.$http = axios;
 
-
 router.beforeEach((to, from, next) => {
         next();
     })
     // 路由结束之后执行
 router.afterEach(() => {});
-
-
-
 
 /* eslint-disable no-new */
 new Vue({
