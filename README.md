@@ -1,4 +1,3 @@
-#xinpinchuan_qian
 ###蓝海创想新品川产品
 > 前端开发
 
