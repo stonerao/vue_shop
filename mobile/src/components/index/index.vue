@@ -1,36 +1,17 @@
 <template>
-	<div class="index">
-		 
-	</div>
+  <h1>
+      我是子路由
+  </h1>
 </template>
+
 <script>
-import {mapState} from 'vuex'
- export default {
- 	data() {
- 			return {
-
- 			}
- 		},
- 		methods: {
-
- 		},
- 		created() {
- 			
- 		},
- 		components: {
- 			 
- 		},
- 		computed: mapState({
- 			count: state => state.count,
- 			countAlias: 'count',
- 			countPlusLocalState(state) {
- 				return state.count + this.localCount
- 			}
- 		})
-
- }
+export default {
+  data() {
+    return {};
+  }
+};
 </script>
-<style  lang="less">
- 
-	
+
+<style>
+
 </style>

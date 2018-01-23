@@ -5,11 +5,11 @@ import * as needList from './need'
 Vue.use(Router);
 // 路由列表
 const routerList = [
-        { path: '/', redirect: '/index' },
+        { path: '/', redirect: '/index' }, //重定向到index
         {
             path: '/index',
             name: 'index',
-            component: r => require.ensure([], () => r(require('@/view/index/index'))),
+            component: r => require.ensure([], () => r(require('@/view/index/index'))), //按需加载
             children: [{
                 path: "/index/router",
                 name: "head",

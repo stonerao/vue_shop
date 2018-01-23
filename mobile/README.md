@@ -1,6 +1,6 @@
 vue+webpack+vue-router+vuex
 
-# vue 移动端单页面脚手架
+# vue 移动端单页面脚手架 
 
 ## Build Setup
 
@@ -18,4 +18,15 @@ npm run build
 npm run build --report
 ```
 
-For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+## 位置说明
+
+* assets 图片
+* components 组件
+* mock 模拟数据
+* router 路由
+* styles 样式表
+* utils js
+* view pages
+* vuex 状态管理
+
+

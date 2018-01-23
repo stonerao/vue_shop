@@ -1,19 +1,17 @@
 <template>
 	<div class="index">
-		<h1>hello</h1>
+		<router-link to="/index/router">点击加载</router-link>
+    <router-view></router-view>
 	</div>
 </template>
-<script> 
-import axios from 'axios'
+<script>  
 export default {
   data() {
     return {};
   },
   methods: {},
-  created() {
-	  axios.get("/stone/api").then((res)=>{
-		  console.log(res)
-	  })
+  created() { 
+    console.log(this)
   },
   components: {} 
 };
