@@ -2,9 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
 import axios from 'axios'
-
 import 'babel-polyfill';
-
 import App from './App'
 import router from './router'
 import store from '@/vuex/index';
@@ -14,8 +12,7 @@ import '@/mock/index'
 
 Vue.config.productionTip = false
 axios.defaults.withCredentials = true;
-axios.defaults.headers.post['Content-Type'] =
-    'application/x-www-form-urlencoded';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 axios.defaults.transformRequest = [function(data) {
     let ret = '';
     for (let it in data) {

@@ -13,13 +13,17 @@ const routerList = [
             children: [{
                 path: "/index/router",
                 name: "head",
-                component: r => require.ensure([], () => r(require('@/components/index/index')))
+                component: r => require.ensure([], () => r(require('@/routing/index/index')))
             }]
         }
     ]
     // 导出参数
 export default new Router({
-    mode: 'history',
+    /* 
+     * 需要后台配置 
+     * https://router.vuejs.org/zh-cn/essentials/history-mode.html
+     */
+    // mode: 'history',  
     routes: [
         ...routerList,
         ...whileList.router,
