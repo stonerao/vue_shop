@@ -7,6 +7,10 @@ import App from './App'
 import router from './router'
 import store from '@/vuex/index';
 
+import { Icon, Row, Col } from 'element-ui'
+Vue.use(Icon)
+Vue.use(Row)
+Vue.use(Col)
 import '@/styles/reset.css'
 import '@/mock/index'
 

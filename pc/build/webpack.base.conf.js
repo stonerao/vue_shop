@@ -18,7 +18,7 @@ module.exports = {
             config.build.assetsPublicPath : config.dev.assetsPublicPath
     },
     resolve: {
-        extensions: ['.js', '.vue', '.json', 'ts'],
+        extensions: ['.js', '.vue', '.json'],
         alias: {
             'vue$': 'vue/dist/vue.esm.js',
             '@': resolve('src')
@@ -37,6 +37,10 @@ module.exports = {
                 options: {
                     appendTsSuffixTo: [/\.vue$/]
                 }
+            },
+            {
+                test: /\.less$/,
+                loader: "style-loader!css-loader!less-loader",
             },
             {
                 test: /\.js$/,
