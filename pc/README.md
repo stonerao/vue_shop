@@ -22,6 +22,7 @@ npm run build --report
 
 * assets 图片
 * components 组件
+* routing 子路由
 * mock 模拟数据
 * router 路由
 * styles 样式表
@@ -29,4 +30,11 @@ npm run build --report
 * view pages
 * vuex 状态管理
 
+### 依赖项
 
+* vue
+* vue-router
+* axios 
+* element-ui
+* mockjs
+* less 

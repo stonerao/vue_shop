@@ -10,9 +10,7 @@ export default {
     return {};
   },
   methods: {},
-  created() { 
-    console.log(this)
-  },
+  created() {},
   components: {} 
 };
 </script>
