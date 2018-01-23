@@ -1,6 +1,7 @@
 <template>
 	<div class="index">
-		<h1>从这里开始</h1> 
+		<router-link to="/index/router">点击加载</router-link>
+    <router-view></router-view>
 	</div>
 </template>
 <script>  
@@ -10,6 +11,7 @@ export default {
   },
   methods: {},
   created() { 
+    console.log(this)
   },
   components: {} 
 };
