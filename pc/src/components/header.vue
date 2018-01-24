@@ -3,7 +3,7 @@
         <!-- 顶部广告 -->
         <div class="index-top-advertising" v-if="imgs.advertising"> 
         <div class="advertising-img cur" :style="{'background-image': `url(${imgs.advertising})`}" @click="$store.commit('href','http://www.baidu.com')"></div>
-        <img :src="icons.over" class="advertising-over cur" @click="imgs.advertising=null">
+        <img v-lazy="icons.over" class="advertising-over cur" @click="imgs.advertising=null">
         </div>
         <div class="index-top">
         <div class="main-box"> 

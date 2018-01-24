@@ -10,11 +10,6 @@ const routerList = [
             path: '/index',
             name: 'index',
             component: r => require.ensure([], () => r(require('@/view/index/index'))), //按需加载
-            children: [{
-                path: "/index/router",
-                name: "head",
-                component: r => require.ensure([], () => r(require('@/routing/index/index')))
-            }]
         }
     ]
     // 导出参数

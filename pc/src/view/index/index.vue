@@ -6,7 +6,7 @@
     <div class="index-banner"> 
       <el-carousel trigger="hover" height="540px">
         <el-carousel-item v-for="item in 4" :key="item">
-           <img :src="banner" alt="" class="index-banner-imgs">
+           <img v-lazy="banner" alt="" class="index-banner-imgs">
         </el-carousel-item>
       </el-carousel>
     </div>

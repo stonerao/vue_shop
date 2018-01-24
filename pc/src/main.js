@@ -7,6 +7,16 @@ import App from './App'
 import router from './router'
 import store from '@/vuex/index';
 
+
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload, {
+    preLoad: 1.5,
+    error: require('@/assets/loading.png'),
+    loading: require('@/assets/error.png'),
+    attempt: 1
+})
+
+
 import { Icon, Row, Col } from 'element-ui'
 Vue.use(Icon)
 Vue.use(Row)
