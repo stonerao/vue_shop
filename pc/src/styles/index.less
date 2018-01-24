@@ -1,4 +1,5 @@
-@color:#f09f0b;;
+@color: #f09f0b;
+;
 .cur {
     cursor: pointer;
 }
@@ -10,23 +11,48 @@
 .float-left {
     float: left;
 }
-.main-box{
-    max-width:1200px;
-    min-width:980px;
-    width:100%;
-    margin-left:auto;
-    margin-right:auto;
+
+.main-box {
+    max-width: 1200px;
+    min-width: 980px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
-.color{
-    color:@color;
+
+.color {
+    color: @color;
 }
-.color-b{
-   background-color:@color;
-   color:#fff;
+
+.color-b {
+    background-color: @color;
+    color: #fff;
 }
-.width100{
-    width:100%
+
+.width100 {
+    width: 100%
 }
-.overflow{
-    overflow:hidden
+
+.overflow {
+    overflow: hidden
+}
+
+.index-icon { 
+    background-position: center;
+    background-repeat: no-repeat;
+    line-height:1; 
+    display: inline-block;
+    vertical-align: middle;
+} 
+.text-over {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.text-over-all(@size: 4) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @size;
+    -webkit-box-orient: vertical;
 }

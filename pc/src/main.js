@@ -13,7 +13,7 @@ Vue.use(Row)
 Vue.use(Col)
 import '@/styles/reset.css'
 import '@/mock/index'
-
+import '@/utils/start'
 Vue.config.productionTip = false
 axios.defaults.withCredentials = true;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
