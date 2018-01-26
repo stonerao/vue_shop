@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import * as whileList from './while'
 import * as needList from './need'
+import * as memberList from './member'
 Vue.use(Router);
 // 路由列表
 const routerList = [{
@@ -17,7 +18,15 @@ const routerList = [{
         }, {
             path: "/member",
             name: 'member',
-            component: r => require.ensure([], () => r(require('@/view/member/index')))
+            component: r => require.ensure([], () => r(require('@/view/member/index'))),
+            redirect: '/member/index',
+            children: memberList.router /* member 左边 侧栏 */
+        }, {
+            path: "/system",
+            name: 'system',
+            component: r => require.ensure([], () => r(require('@/view/system/index'))),
+            redirect: '/system/index',
+            children: memberList.system /* member 左边 侧栏 */
         }, {
             path: "*",
             component: r => require.ensure([], () => r(require('@/routing/notFound')))
@@ -33,7 +42,7 @@ export default new Router({
     routes: [
         ...routerList,
         ...whileList.router,
-        ...needList.router
+        ...needList.router,
     ], //所有路由
     linkActiveClass: 'active'
 })

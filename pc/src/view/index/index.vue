@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- 顶部 -->
-    <Headers/>
+    <!-- <Headers/> -->
     <!-- banners -->
     <div class="index-banner"> 
       <el-carousel trigger="hover" height="540px">
@@ -81,8 +81,7 @@
             </el-row> 
           </div>
         </div> 
-      </div>
-  
+      </div> 
     </div> 
     <Footers/>
   </div>
@@ -167,7 +166,7 @@ export default {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-  } 
+  }
 }
 .index-box {
   overflow: hidden;

@@ -1,7 +1,7 @@
 <template>
 	<div class="index"> 
         <!-- 顶部广告 -->
-        <div class="index-top-advertising" v-if="imgs.advertising"> 
+        <div class="index-top-advertising" v-if="imgs.advertising&&this.$route.name==='index'"> 
         <div class="advertising-img cur" :style="{'background-image': `url(${imgs.advertising})`}" @click="$store.commit('href','http://www.baidu.com')"></div>
         <img v-lazy="icons.over" class="advertising-over cur" @click="imgs.advertising=null">
         </div>
@@ -18,7 +18,7 @@
                   <a href="javascript:void(0)">注册</a>
               </div>
               <div class="relative">
-                  <a href="javascript:void(0)">我的{{name}}<i class="el-icon-caret-bottom"></i></a>
+                  <router-link to="/member">我的{{name}}<i class="el-icon-caret-bottom"></i></router-link>
                   <div class="index-top-hover">
                     <router-link to="/">订单</router-link>
                   </div>
@@ -163,7 +163,9 @@ export default {
       this.navs.listView = e;
     }
   },
-  created() {},
+  created() {
+     
+  },
   components: {},
   watch: {
     ["serach.val"](val) {
