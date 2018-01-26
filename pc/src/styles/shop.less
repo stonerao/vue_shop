@@ -1,0 +1,123 @@
+.shop-box {
+    margin-top: 70px;
+}
+
+.shop1 {
+    overflow: hidden;
+    .shop-nav {
+        width: 100%;
+        overflow: hidden;
+        height: 50px;
+        display: inline-block;
+    }
+    .shop-nav-icon {
+        line-height: 50px;
+        display: inline-block;
+        vertical-align: middle;
+        height: 48px;
+        width: auto;
+        margin-right: 5px;
+        position: relative;
+        top: -2px;
+    }
+    .shop-nav-title {
+        line-height: 50px;
+        color: #333;
+        font-size: 18px;
+    }
+    .shop-nav-text {
+        margin-left: 10px;
+    }
+    .shop-nav-more {
+        float: right;
+        line-height: 50px;
+        a {
+            padding: 0 20px;
+            transition: all .2s;
+            position: relative;
+        }
+        a:last-child {
+            padding-right: 0;
+        }
+        a:first-child::after {
+            content: none;
+        }
+        a::after {
+            position: absolute;
+            width: 2px;
+            content: " ";
+            height: 16px;
+            background: #aaa;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        a:hover {
+            color: #23ad39;
+        }
+    }
+    .shop-group {
+        overflow: hidden;
+        background: #fff;
+        margin-top: 10px;
+        box-shadow: 0 0 0 1px #ededed;
+        .shop-group-rom {
+            border: 1px solid #ededed;
+            float: left;
+            width: 281px;
+            height: 580px;
+            box-shadow: 0 0 0 1px solid #ededed;
+        }
+    }
+    .group-rom-img {
+        width: 283px;
+        height: 358px;
+        overflow: hidden;
+        img {
+            width: 283px;
+            height: 358px;
+            overflow: hidden
+        }
+    }
+    .group-rom-list {
+        overflow: hidden;
+        text-align: center;
+        .group-rom-link {
+            display: inline-block;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            line-height: 65px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            background-color: #f2fff4;
+            box-shadow: 0 2px 4px 0 #8ce599;
+        }
+    }
+    .shop-group-items {
+        width: 916px;
+        float: right;
+    }
+    .shop-group-item {
+        height: 290px;
+        cursor: pointer;
+        p {
+            line-height: 32px;
+            padding: 0 20px;
+        }
+    }
+    .shop-group-e {
+        border-bottom: 1px solid #ededed;
+        .text-over {
+            font-size: 16px;
+        }
+    }
+    .shop-group-img {
+        width: 229px;
+        height: 200px;
+        overflow: hidden;
+        text-align: center;
+        line-height: 200px;
+        img {}
+    }
+}

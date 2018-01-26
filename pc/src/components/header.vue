@@ -6,25 +6,28 @@
         <img v-lazy="icons.over" class="advertising-over cur" @click="imgs.advertising=null">
         </div>
         <div class="index-top">
-        <div class="main-box"> 
-            <div>
-            <span>欢迎您光临</span>
-            <a href="javascript:void(0)" class="color">e菜市</a>
-            </div>
-            <div class="float-right index-top-box">
-            <div>
-                <a href="javascript:void(0)">登陆</a>
-                <span href="javascript:void(0)">&nbsp;|&nbsp;</span>
-                <a href="javascript:void(0)">注册</a>
-            </div>
-            <div>
-                <a href="javascript:void(0)">我的{{name}}<i class="el-icon-caret-bottom"></i></a>
-            </div>
-            <div>
-                <a href="javascript:void(0)">手机{{name}}<i class="el-icon-caret-bottom"></i></a>
-            </div>
-            </div>
-        </div>
+          <div class="main-box"> 
+              <div>
+              <span>欢迎您光临</span> 
+                <router-link to="/member" class="color">e菜市</router-link>!
+              </div>
+              <div class="float-right index-top-box">
+              <div>
+                  <a href="javascript:void(0)">登陆</a>
+                  <span href="javascript:void(0)">&nbsp;|&nbsp;</span>
+                  <a href="javascript:void(0)">注册</a>
+              </div>
+              <div class="relative">
+                  <a href="javascript:void(0)">我的{{name}}<i class="el-icon-caret-bottom"></i></a>
+                  <div class="index-top-hover">
+                    <router-link to="/">订单</router-link>
+                  </div>
+              </div>
+              <div class="relative">
+                  <a href="javascript:void(0)">手机{{name}}<i class="el-icon-caret-bottom"></i></a>
+              </div>
+              </div>
+          </div>
         </div>
 
         <div class="index-search main-box"> 
@@ -45,10 +48,10 @@
                 </div>
                 <div class="index-search-pop">
                 <span>热门搜索:</span>
-                <a href="javascript:void(0)">蔬菜</a>
+                 <a href="javascript:void(0)">蔬菜</a>
                 </div>
             </div> 
-            <div class="index-search-list" v-if="serach.items">
+            <div class="index-search-list" v-if="serach.items.length>0"> 
                 <ul>
                     <li class="text-over" v-for="(item,index) in serach.items" :key="index" @click="searchLink(item)">{{item.name}}</li>
                 </ul>

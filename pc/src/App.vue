@@ -8,8 +8,5 @@ export default {
 }
 </script>
 <style lang="less">
-@import './styles/index.less';  
-#app{
-  min-width:980px;
-}
+@import './styles/index.less';   
 </style>

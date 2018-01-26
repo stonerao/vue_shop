@@ -15,7 +15,7 @@
       <!-- 推荐商品 -->
       <div class="main-box index-recommend">
         <div class="recommend-navs">
-          <div class="recommend-nav" v-for="(item,index) in recommend.list" :key="index" :class="{'active':recommend.index===item.state?true:false}" v-html="item.name"></div> 
+          <div class="recommend-nav" v-for="(item,index) in recommend.list" :key="index" :class="{'active':recommend.index===item.state?true:false}" v-html="item.name" @click="recommendTab(item.state)"></div> 
         </div>
         <div class="recommend-items">
           <div class="recommend-item" v-for="(item,index) in recommend.items" :key="index">
@@ -24,7 +24,7 @@
             </div>
             <div class="recommend-items-text">
               <p v-html="item.content" class="recommend-items-content"></p>
-              <p v-html="item.price" class="recommend-items-price"></p>
+              <p class="recommend-items-price red-color-porce">￥{{item.price}}</p>
             </div>
           </div>
         </div>
@@ -36,7 +36,7 @@
         </div>
         <div>
           <router-link to="/"> <img v-lazy="recommend.adv.img1.img"></router-link>
-           <router-link to="/"> <img v-lazy="recommend.adv.img2.img"></router-link>
+          <router-link to="/"> <img v-lazy="recommend.adv.img2.img"></router-link>
         </div>
         <div>
            <router-link to="/"> <img v-lazy="recommend.adv.img3.img"></router-link>
@@ -56,8 +56,12 @@
         </div> 
         <div class="shop-group while-b">
           <div class="shop-group-rom">
-            <div class="group-rom-img">
-              <img v-lazy="$Mock.Random.dataImage('283x358')" alt="">
+            <div class="group-rom-img"> 
+              <el-carousel indicator-position="none" height="358px">
+                <el-carousel-item v-for="item in 4" :key="item">
+                  <img v-lazy="$Mock.Random.dataImage('283x358')" alt="">
+                </el-carousel-item>
+              </el-carousel> 
             </div>   
             <el-row class="group-rom-list">
               <el-col :span="8" v-for="item in 6" :key="item"><router-link to="/" class="group-rom-link">{{$Mock.mock('@cname')}}</router-link></el-col>
@@ -74,21 +78,21 @@
                   <p class="red-color-porce">￥{{$Mock.Random.float(60, 100, 2, 2)}}</p>
                 </div>
               </el-col>
-            </el-row>
-            
+            </el-row> 
           </div>
-        </div>
-
+        </div> 
       </div>
   
     </div> 
+    <Footers/>
   </div>
 </template>
 
 <script>
 import Headers from "@/components/header";
+import Footers from "@/components/footer";
 import { Carousel, CarouselItem } from "element-ui";
- 
+
 export default {
   data() {
     return {
@@ -99,13 +103,20 @@ export default {
         items: [],
         adv: {}
       },
-      shop:[]
+      shop: []
     };
   },
   components: {
     Headers,
+    Footers,
     "el-carousel": Carousel,
     "el-carousel-item": CarouselItem
+  },
+  methods: {
+    recommendTab(state) {
+      /* 推荐切换 */
+      this.recommend.index = state;
+    }
   },
   mounted() {
     /* 推荐 */
@@ -114,7 +125,6 @@ export default {
         const data = res.data.data;
         this.recommend.list = [];
         this.recommend.items = [];
-
         data.list.map((x, i) => {
           this.recommend.list.push({
             name: x.name,
@@ -152,11 +162,12 @@ export default {
 @color: #f09f0b;
 .index-banner {
   position: relative;
+  overflow: hidden;
   .index-banner-imgs {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-  }
+  } 
 }
 .index-box {
   overflow: hidden;

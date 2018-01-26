@@ -4,21 +4,32 @@ import * as whileList from './while'
 import * as needList from './need'
 Vue.use(Router);
 // 路由列表
-const routerList = [
-        { path: '/', redirect: '/index' }, //重定向到index
+const routerList = [{
+            path: '/',
+            redirect: '/index'
+        },
+        /* 重定向到index */
         {
             path: '/index',
             name: 'index',
-            component: r => require.ensure([], () => r(require('@/view/index/index'))), //按需加载
+            component: r => require.ensure([], () => r(require('@/view/index/index'))),
+            //按需加载
+        }, {
+            path: "/member",
+            name: 'member',
+            component: r => require.ensure([], () => r(require('@/view/member/index')))
+        }, {
+            path: "*",
+            component: r => require.ensure([], () => r(require('@/routing/notFound')))
         }
     ]
     // 导出参数
 export default new Router({
-    /* 
-     * 需要后台配置 
+    /*
+     * 需要后台配置
      * https://router.vuejs.org/zh-cn/essentials/history-mode.html
      */
-    // mode: 'history',  
+    mode: 'history',
     routes: [
         ...routerList,
         ...whileList.router,
