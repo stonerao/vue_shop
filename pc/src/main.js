@@ -21,6 +21,7 @@ import { Icon, Row, Col } from 'element-ui'
 Vue.use(Icon)
 Vue.use(Row)
 Vue.use(Col)
+
 import '@/styles/reset.css'
 import '@/mock/index'
 import '@/utils/start'
@@ -35,11 +36,11 @@ axios.defaults.transformRequest = [function(data) {
     return ret;
 }]
 Vue.prototype.$http = axios;
-
+/* 路由开始执行代码 */
 router.beforeEach((to, from, next) => {
         next();
     })
-    // 路由结束之后执行
+    /* 路由结束之后执行*/
 router.afterEach(() => {});
 
 /* eslint-disable no-new */

@@ -1,14 +1,17 @@
 @color: #f09f0b;
-;
+@border:1px solid #eaeaea;
 .cur {
     cursor: pointer;
 }
-.hui-color{
-    color:#999;
+
+.hui-color {
+    color: #999;
 }
-.while-b{
-    background:#fff;
+
+.while-b {
+    background: #fff;
 }
+
 .float-right {
     float: right;
 }
@@ -16,11 +19,13 @@
 .float-left {
     float: left;
 }
-.relative{
+
+.relative {
     position: relative;
 }
+
 .main-box {
-  width:1200px;
+    width: 1200px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -42,18 +47,20 @@
     overflow: hidden
 }
 
-.index-icon { 
+.index-icon {
     background-position: center;
     background-repeat: no-repeat;
-    line-height:1; 
+    line-height: 1;
     display: inline-block;
     vertical-align: middle;
-} 
+}
+
 .text-over {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 .text-over-all(@size: 4) {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -61,25 +68,49 @@
     -webkit-line-clamp: @size;
     -webkit-box-orient: vertical;
 }
-.img-center{
+
+.img-center {
     display: inline-block;
     vertical-align: middle;
 }
-.red-color-porce{
-    color:#ff1f00;
-    font-size:18px;
+
+.red-color-porce {
+    color: #ff1f00;
+    font-size: 18px;
 }
 
-
-  .index-banner{
-    .el-carousel{
-        overflow:hidden;
+.index-banner {
+    .el-carousel {
+        overflow: hidden;
     }
     .el-carousel__indicator {
         .el-carousel__button {
-          width: 15px;
-          height: 15px;
-          border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
         }
-      }
-  }
+    }
+}
+/*  */
+.main-box {
+    .el-breadcrumb__item:last-child .el-breadcrumb__inner,
+    .el-breadcrumb__item:last-child .el-breadcrumb__inner a,
+    .el-breadcrumb__item:last-child .el-breadcrumb__inner a:hover,
+    .el-breadcrumb__item:last-child .el-breadcrumb__inner:hover {
+        color: #333;
+        font-weight: 400;
+    }
+    .el-breadcrumb__inner,
+    .el-breadcrumb__inner a {
+        color: #333;
+        font-weight: 400;
+    }
+    .el-breadcrumb__inner a:hover,
+    .el-breadcrumb__inner:hover {
+        color: @color;
+    }
+    .m-breadcrumb{
+        margin-top:18px;
+        line-height:38px;
+    }
+}
