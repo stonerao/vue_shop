@@ -1,5 +1,13 @@
 @color: #f09f0b;
-@border:1px solid #eaeaea;
+@border: 1px solid #eaeaea;
+@color-g: #29b43d;
+
+.menu-border {
+    border: @border;
+}
+a{
+    transition:all .2s;
+}
 .cur {
     cursor: pointer;
 }
@@ -20,6 +28,19 @@
     float: left;
 }
 
+.img-center {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
 .relative {
     position: relative;
 }
@@ -38,7 +59,9 @@
     background-color: @color;
     color: #fff;
 }
-
+.color-g{
+    color:@color-g;
+}
 .width100 {
     width: 100%
 }
@@ -46,15 +69,31 @@
 .overflow {
     overflow: hidden
 }
-
+.margin-bottom10{
+    margin-block-end:10px;
+}
+.margin-top5{
+    margin-block-end:5px;
+}
 .index-icon {
     background-position: center;
     background-repeat: no-repeat;
     line-height: 1;
-    display: inline-block;
-    vertical-align: middle;
+    .img-center;
+}
+.font-1{
+    font-size:12px;
 }
 
+.font-2{
+    font-size:14px;
+}
+.font-3{
+    font-size:16px;
+}
+.font-4{
+    font-size:18px;
+}
 .text-over {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -67,11 +106,6 @@
     display: -webkit-box;
     -webkit-line-clamp: @size;
     -webkit-box-orient: vertical;
-}
-
-.img-center {
-    display: inline-block;
-    vertical-align: middle;
 }
 
 .red-color-porce {
@@ -91,7 +125,12 @@
         }
     }
 }
+.top25{
+    margin-top:25px;
+}
+
 /*  */
+
 .main-box {
     .el-breadcrumb__item:last-child .el-breadcrumb__inner,
     .el-breadcrumb__item:last-child .el-breadcrumb__inner a,
@@ -109,8 +148,52 @@
     .el-breadcrumb__inner:hover {
         color: @color;
     }
-    .m-breadcrumb{
-        margin-top:18px;
-        line-height:38px;
+    .m-breadcrumb {
+        margin-top: 18px;
+        line-height: 38px;
+    }
+}
+
+.m-btn {
+    @height:28px;
+    height: @height;
+    display: inline-block;
+    border:@border;
+    border-radius:@height / 1.8;
+    padding:0 25px;
+    line-height:@height;
+    text-align:center;
+    background:#fff;
+}
+.width-185{
+    width:185px;
+}
+.width-395{
+    width:395px;
+}
+.width-107{
+    width:107px;
+}
+.width-133{
+    width: 133px;
+}
+.width-138{
+    width: 138px;
+}
+.height-183{
+    height:183px;
+}
+.my-order-table{
+    tr{
+        td{
+            border-left:@border;
+            display: inline-block;
+            line-height:1;
+            height:183px; 
+        }
+        td:first-child{
+            border-left:none;
+            
+        }
     }
 }

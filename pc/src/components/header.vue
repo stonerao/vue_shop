@@ -33,7 +33,7 @@
         <div class="index-search main-box"> 
         <el-row :gutter="10">
             <el-col :span="4" class="index-logo">  
-            <a href="javascript:void(0)"><img :src="imgs.logo" alt="" class="width100 cur"> </a> 
+            <router-link to="/" href="javascript:void(0)"><img :src="imgs.logo" alt="" class="width100 cur"> </router-link> 
             </el-col>
             <el-col :span="12" :offset="3">
             <div class="index-search-box">

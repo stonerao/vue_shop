@@ -2,21 +2,22 @@
   <ul class="m-memu-list">
      <li v-for="(item,index) in model" :key="index" class="m-memu-items">
         <router-link :to="`/member${item.path}`" class="m-memu-title">{{item.name}}</router-link>
-        <memu v-if="item.children" :model="item.children" class="m-memu-children"></memu>
+        <menus v-if="item.children" :model="item.children" class="m-memu-children"></menus>
      </li>
   </ul>
 </template>
 
 <script>
 export default {
-  name: "memu" /* 自身组件的名字 可以在当前vue组件调用 */,
+  name: "menus" /* 自身组件的名字 可以在当前vue组件调用 */,
   props: {
     model: Array
   },
   data() {
     return {};
   },
-  created() {}
+  created() { 
+  }
 };
 </script>
 

@@ -5,8 +5,8 @@
         <el-breadcrumb-item>我的e菜市</el-breadcrumb-item> 
       </el-breadcrumb>
       <div class="m-box">
-        <div class="m-menu float-left">
-          <memu :model="memu" class="m-menu-view"/>
+        <div class="m-menu menu-border float-left">
+          <menus :model="menu" class="m-menu-view"/>
         </div>
         <router-view class="m-view float-right"></router-view>
       </div>
@@ -15,11 +15,11 @@
 
 <script>
 import { Breadcrumb, BreadcrumbItem } from "element-ui";
-import memu from "@/components/member/memu";
+import menu from "@/components/member/menu";
 export default {
   data() {
     return {
-      memu: [
+      menu: [
         {
           name: "个人中心",
           path: "/",
@@ -54,7 +54,7 @@ export default {
   components: {
     "el-breadcrumb": Breadcrumb,
     "el-breadcrumb-item": BreadcrumbItem,
-    memu
+    'menus':menu
   }
 };
 </script>
@@ -65,12 +65,11 @@ export default {
     overflow: hidden;
   }
   .m-menu {
-    width: 190px;
-    border: 1px solid #eaeaea;
+    width: 190px; 
     padding: 28px 0;
   }
   .m-view {
-    width: 958px;
+    width: 960px;
   }
   .m-menu-view {
     padding-left: 40px;
