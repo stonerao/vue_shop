@@ -84,8 +84,13 @@ export default {
       experience: 0 /* 经验值 */
     };
   },
-  mounted() {
-    this.experience = 50;
+  mounted() { 
+    setInterval(()=>{
+      this.experience +=1;
+      if(this.experience>=100){
+        this.experience=0;
+      }
+    },1000)
   }
 };
 </script>
