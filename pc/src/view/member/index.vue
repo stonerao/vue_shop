@@ -27,25 +27,25 @@ export default {
         },
         {
           name: "交易信息",
-          path: "/",
+          path: "/order",
           children: [
             { name: "我的订单", path: "/order" },
-            { name: "我的优惠券", path: "/order" },
-            { name: "我的积分", path: "/order" },
-            { name: "商品收藏", path: "/order" },
-            { name: "线下菜市收场", path: "/order" },
-            { name: "购买过的商品", path: "/order" }
+            { name: "我的优惠券", path: "/coupon" },
+            { name: "我的积分", path: "/integral" },
+            { name: "商品收藏", path: "/collection" },
+            { name: "线下菜市收藏", path: "/superCollection" },
+            { name: "购买过的商品", path: "/parst" }
           ]
         },
         {
           name: "账户安全",
-          path: "/",
+          path: "/month",
           children: [
-            { name: "账户余额", path: "/order" },
-            { name: "个人资料", path: "/order" },
-            { name: "账务安全", path: "/order" },
-            { name: "收货地址", path: "/order" },
-            { name: "收货自提柜子", path: "/order" }
+            { name: "账户余额", path: "/month" },
+            { name: "个人资料", path: "/information" },
+            { name: "账务安全", path: "/safety" },
+            { name: "收货地址", path: "/address" },
+            { name: "收货自提柜子", path: "/cabinet" }
           ]
         }
       ]
@@ -59,10 +59,10 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less" scoped> 
 .m-index {
   .m-box {
-    overflow: hidden;
+    overflow: hidden;margin-bottom:40px;
   }
   .m-menu {
     width: 190px; 
@@ -70,9 +70,11 @@ export default {
   }
   .m-view {
     width: 960px;
+    
   }
   .m-menu-view {
     padding-left: 40px;
   }
 }
+
 </style>

@@ -1,13 +1,16 @@
 @color: #f09f0b;
 @border: 1px solid #eaeaea;
 @color-g: #29b43d;
-
 .menu-border {
     border: @border;
 }
-a{
-    transition:all .2s;
+.border{
+    border:@border;
 }
+a {
+    transition: all .2s;
+}
+
 .cur {
     cursor: pointer;
 }
@@ -18,6 +21,18 @@ a{
 
 .while-b {
     background: #fff;
+}
+
+.while-f {
+    color: #fff;
+}
+
+.i-b {
+    display: inline-block;
+}
+
+.line {
+    line-height: 24px
 }
 
 .float-right {
@@ -50,7 +65,9 @@ a{
     margin-left: auto;
     margin-right: auto;
 }
-
+.margin-left20{
+    margin-left:20px;
+}
 .color {
     color: @color;
 }
@@ -59,9 +76,11 @@ a{
     background-color: @color;
     color: #fff;
 }
-.color-g{
-    color:@color-g;
+
+.color-g {
+    color: @color-g;
 }
+
 .width100 {
     width: 100%
 }
@@ -69,31 +88,46 @@ a{
 .overflow {
     overflow: hidden
 }
-.margin-bottom10{
-    margin-block-end:10px;
+
+.margin-bottom10 {
+    margin-bottom: 10px;
 }
-.margin-top5{
-    margin-block-end:5px;
+
+.margin-top5 {
+    margin-top: 5px;
 }
+
+.margin-top20 {
+    margin-top: 20px;
+}
+
+.margin-top60 {
+    margin-top: 60px;
+}
+
 .index-icon {
     background-position: center;
     background-repeat: no-repeat;
     line-height: 1;
     .img-center;
 }
-.font-1{
-    font-size:12px;
+
+.font-1 {
+    font-size: 12px;
 }
 
-.font-2{
-    font-size:14px;
+.font-2 {
+    font-size: 14px;
 }
-.font-3{
-    font-size:16px;
+
+.font-3 {
+    font-size: 16px;
 }
-.font-4{
-    font-size:18px;
+
+.font-4 {
+    font-size: 18px;
 }
+
 .text-over {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -125,9 +159,11 @@ a{
         }
     }
 }
-.top25{
-    margin-top:25px;
+
+.top25 {
+    margin-top: 25px;
 }
+
 
 /*  */
 
@@ -155,45 +191,141 @@ a{
 }
 
 .m-btn {
-    @height:28px;
+    @height: 28px;
     height: @height;
     display: inline-block;
-    border:@border;
-    border-radius:@height / 1.8;
-    padding:0 25px;
-    line-height:@height;
-    text-align:center;
-    background:#fff;
+    border: @border;
+    border-radius: @height / 1.8;
+    padding: 0 25px;
+    line-height: @height;
+    text-align: center;
+    background: #fff;
 }
-.width-185{
-    width:185px;
+
+.width-185 {
+    width: 185px;
 }
-.width-395{
-    width:395px;
+
+.width-395 {
+    width: 395px;
 }
-.width-107{
-    width:107px;
+
+.width-107 {
+    width: 107px;
 }
-.width-133{
-    width: 133px;
+
+.width-130 {
+    width: 130px;
 }
-.width-138{
+
+.width-120 {
+    width: 120px;
+}
+
+.width-138 {
     width: 138px;
 }
-.height-183{
-    height:183px;
+
+.width-250 {
+    width: 250px;
 }
-.my-order-table{
-    tr{
-        td{
-            border-left:@border;
-            display: inline-block;
-            line-height:1;
-            height:183px; 
+
+.height-183 {
+    height: 183px;
+}
+
+.width-495 {
+    width: 495px;
+}
+
+.width-155 {
+    width: 155px;
+}
+
+.my-order-table {
+    tr {
+        td {
+            border-left: @border;
+            line-height: 1;
+            height: 183px;
         }
-        td:first-child{
-            border-left:none;
-            
+        td:first-child {
+            border-left: none;
         }
     }
+}
+
+.m_btn {
+    @height: 32px;
+    height: @height;
+    display: inline-block;
+    border-radius: @height / 1.8;
+    padding: 0 15px;
+    line-height: @height;
+    text-align: center;
+    background: #fff;
+}
+
+.btn_type_1 {
+    background-color: @color;
+    color: #fff;
+}
+
+.btn_type_2 {
+    background-color: @color-g;
+    color: #fff;
+}
+
+#app {
+    .i_border {
+        .el-input__inner {
+            border-radius: 0px;
+        }
+        .el-input__inner:focus {
+            border-color: @color;
+        }
+        .el-select .el-input.is-focus .el-input__inner {
+            border-color: @color;
+        }
+        .el-input--mini .el-input__inner{
+            height:30px;
+        }
+    }
+     
+    
+}
+body{
+    .el-select-dropdown{
+        border-radius: 0px;
+    }
+}
+.clear{
+    clear:both; height: 0; line-height: 0; font-size: 0
+} 
+.o_page{
+    padding:20px 0;
+    .width_page{
+        height:36px;
+        line-height:36px;
+        min-width:36px;
+    }
+    .el-pagination.is-background .btn-next, .el-pagination.is-background .btn-prev, .el-pagination.is-background .el-pager li{
+        .width_page;
+        border:1px solid #eaeaea;
+    }
+    .el-pagination button, .el-pagination span:not([class*=suffix]){
+        .width_page;
+    }
+    .el-pagination__editor.el-input .el-input__inner{
+        .width_page;
+    }
+    .el-pagination.is-background .el-pager li.active{
+        background:#fff;
+        color:red;
+        border-color:transparent;
+    }
+    .el-pagination.is-background .el-pager li:hover{
+        color:red;
+    }
+    
 }

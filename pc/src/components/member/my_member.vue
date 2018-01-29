@@ -58,26 +58,97 @@
           <td class="width-107 center">
             <p style="line-height:183px;" class="color-g my_order__line"> 已支付</p> 
           </td>
-          <td class="width-133 center ">
+          <td class="width-130 center ">
             <div class="my_order_shop">
             <p>5物件商品</p>
             <p class="my_order_shop_price red-color-porce">￥1050.00</p>
             </div>
           </td>
-          <td class="width-133 ">
+          <td class="width-120 ">
             <div class="my_order__btn"> 
-            <router-link to="/" class="m-btn margin-bottom10">再次购买</router-link>
-           <p class="margin-bottom10 margin-top5"> <router-link to="/" class=" font-1">查看详情</router-link></p>
-           <p class="margin-bottom10 margin-top5"><router-link to="/" class=" font-1">再次购买</router-link></p>
+            <router-link to="/" class="m_btn margin-bottom10 btn_type_1">再次购买</router-link>
+            <p class="margin-bottom10 margin-top5"> <router-link to="/" class=" font-1">查看详情</router-link></p>
+            <p class="margin-bottom10 margin-top5"><router-link to="/" class=" font-1">再次购买</router-link></p>
+            </div>
+          </td>
+        </tr> 
+        <tr class="height-183">
+          <td class="width-185 center">
+            <div class="my__order_code"> 
+              <p>订单号：859911111111</p>
+              <p class="hui-color">2018-1-27 17:12:16</p>
+            </div>
+          </td>
+          <td class="width-395 my__order_img" >
+            <img class="img-center img-avatar" v-lazy="$Mock.Random.dataImage('105x105')" v-for="i in 3" :key='i'> 
+          </td>
+          <td class="width-107 center">
+            <p style="line-height:183px;" class="color-g my_order__line"> 已支付</p> 
+          </td>
+          <td class="width-130 center ">
+            <div class="my_order_shop">
+            <p>5物件商品</p>
+            <p class="my_order_shop_price red-color-porce">￥1050.00</p>
+            </div>
+          </td>
+          <td class=" ">
+            <div class="my_order__btn"> 
+            <router-link to="/" class="m_btn margin-bottom10 btn_type_1">再次购买</router-link>
+            <p class="margin-bottom10 margin-top5"> <router-link to="/" class=" font-1">查看详情</router-link></p>
+            <p class="margin-bottom10 margin-top5"><router-link to="/" class=" font-1">再次购买</router-link></p>
             </div>
           </td>
         </tr>
       </table>
+      
+    </div>
+
+
+    <div class="my-order top25 menu-border">
+      <div class="my-order-nav overflow">
+        <span class="font-1">购买过的商品</span>
+        <router-link to="/test"  class="font-1 float-right">查看全部商品</router-link>
+      </div>
+      <table class="my-order-table">
+        <tr class="height-183">
+          <td class="width-495">
+            <div class="my__order_info "> 
+              <div class="my__order_img i-b float-left">
+                <img class="img-center img-avatar" v-lazy="$Mock.Random.dataImage('134x134')" alt="">
+              </div>
+              <div class="i-b width-250 line ">
+                <p>
+                  海南精品水果，超级好吃，超级好吃海南精品水果，超级好吃
+                </p>
+                <p class="my_order_shop_price red-color-porce">￥1050.00</p>
+              </div>
+            </div>
+          </td>
+         
+          <td class=" center width-155">
+            <p class="hui-color margin-top60">购买过</p> 
+            <p class="margin-top20">2次</p>
+          </td> 
+          <td class=" center width-155">
+            <p style="line-height:183px;" class="  my_order__line " :class="{'color-g':true}">销售中</p> 
+          </td> 
+          <td  class="width-155">
+            <div class="my_order__btn "> 
+            <router-link to="/" class="m_btn margin-bottom10 btn_type_1">再次购买</router-link>
+            <p class="margin-bottom10 margin-top5"> <router-link to="/" class=" font-1">查看详情</router-link></p>
+            <p class="margin-bottom10 margin-top5"><router-link to="/" class=" font-1">再次购买</router-link></p>
+            </div>
+          </td>
+        </tr> 
+         
+      </table>
+      
     </div>
   </div>
 </template>
 
 <script>
+import { Loading } from "element-ui";
 export default {
   data() {
     return {
@@ -86,54 +157,26 @@ export default {
   },
   mounted() {
     this.experience = 50;
-  }
+    let loadingInstance = Loading.service({
+      lock: true,
+      text: "正在加载中，请稍等",
+      background: "rgba(0, 0, 0, 0.7)"
+    });
+    setTimeout(() => {
+      loadingInstance.close();
+    }, 500);
+  } 
 };
 </script>
 
 <style lang="less" scoped>
+@import "../../styles/member.less";
 @color: #f09f0b;
 @color-g: #29b43d;
 .m-my {
   @h: 136px;
-  .my-order {
-    .my-order-nav {
-      padding: 0 18px;
-      height: 44px;
-      line-height: 44px;
-      background: #f4f4f4;
-    }
-    .my-order-table {
-      tr {
-        td {
-          vertical-align: top;
-        }
-        .my__order_code {
-          padding-top: 40px;
-          p {
-            line-height: 42px;
-          }
-        }
-        .my__order_img {
-          line-height: 183px;
-          img {
-            margin: 0 13px;
-          }
-        }
-        .my_order__line {
-          line-height: 183px;
-        }
-        .my_order_shop {
-          padding-top: 60px;
-        }
-        .my_order_shop_price {
-          margin-top: 35px;
-        }
-        .my_order__btn {
-          margin-top: 50px;
-          text-align: center;
-        }
-      }
-    }
+  .my-order { 
+   
   }
   .m-my-details {
     padding: 30px 0;
@@ -227,4 +270,5 @@ export default {
     color: #fff;
   }
 }
+
 </style>

@@ -42,7 +42,15 @@ export default new Router({
     routes: [
         ...routerList,
         ...whileList.router,
-        ...needList.router,
+        ...needList.router
     ], //所有路由
-    linkActiveClass: 'active'
+    linkActiveClass: 'active',
+    scrollBehavior(to, from, savedPosition) {
+        /* 跳转路由后scrollTop 为 0  */
+        if (savedPosition) {
+            return savedPosition
+        } else {
+            return { x: 0, y: 0 }
+        }
+    }
 })

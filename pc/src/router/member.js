@@ -41,7 +41,7 @@ export let router = [{
     {
         name: 'month',
         /* 账户余额 */
-        path: '/member/parst',
+        path: '/member/month',
         component: r => require.ensure([], () => r(require('@/components/member/month')))
     }, {
         name: 'information',

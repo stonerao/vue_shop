@@ -82,14 +82,12 @@
           </div>
         </div> 
       </div> 
-    </div> 
-    <Footers/>
+    </div>  
   </div>
 </template>
 
 <script>
-import Headers from "@/components/header";
-import Footers from "@/components/footer";
+import Headers from "@/components/header"; 
 import { Carousel, CarouselItem } from "element-ui";
 
 export default {
@@ -106,8 +104,7 @@ export default {
     };
   },
   components: {
-    Headers,
-    Footers,
+    Headers, 
     "el-carousel": Carousel,
     "el-carousel-item": CarouselItem
   },
@@ -211,10 +208,15 @@ export default {
     width: 25%;
     text-align: center;
     cursor: pointer;
+     background-image: url(../../assets/index/icon-sss.png);
+    background-repeat: no-repeat;
+    background-position:0 80px;
+    background-size: 6px auto;
   }
-  .recommend-item:hover {
-    box-shadow: 0 3px 10px 0 #aaa;
+  .recommend-item:first-child{
+background-image: none;
   }
+  
   .recommend-items-text {
     line-height: 28px;
     margin-top: 10px;
