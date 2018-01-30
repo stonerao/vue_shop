@@ -1,13 +1,21 @@
 <template>
   <div>
     <ul class="m_coll overflow">
-      <li v-for="item in 15" :key="item" class="border">
-        <div>
-
+      <li v-for="item in 16" :key="item" class="border tran">
+        <div class="m_coll_shop">
+          <div class="m_coll_img center cur">
+            <img class="img-center" v-lazy="$Mock.Random.dataImage('200x200')" alt="">
+          </div>
+          <div class="m_coll_title font-2 line shop__text">
+            {{$Mock.mock('@cparagraph(1, 3)')}}
+          </div>
+          <div class="m_coll_price price font-3">
+            ￥{{$Mock.Random.float(60, 100, 2, 2)}}
+          </div>
         </div>
-        <div>
-          <span>取消</span>
-          <span>收藏</span>
+        <div class="m_coll_c">
+          <span class="cur">取消收藏</span>
+          <span class="cur color-g">加入购物车</span>
         </div>
       </li>
     </ul>
@@ -50,10 +58,52 @@ export default {
     width: 228px;
     height: 360px;
     float: left;
-    margin-right:18px;
+    margin-right:16px;
+    margin-bottom:18px;
+    background:#fff;
+    >div{
+      padding:0 10px;
+    }
+  }
+  li:hover{
+    box-shadow:0 0 8px 0 #ccc;
   }
   li:nth-child(4n){
     margin-right:0;
   }
+  .m_coll_shop{
+    height:317px;
+  }
+  .m_coll_img{
+    height:225px;
+    line-height:225px;
+    width:100%;
+    img{
+      max-width:100%;
+      max-height:100%; 
+    }
+  }
+  .m_coll_title{
+    height:45px;
+    margin-bottom:15px;
+  }
+  .m_coll_price{
+    color:#ff0000;
+    font-weight:600;
+  }
+  .m_coll_c{
+    border-top:1px solid #ededed;
+    span{
+      display: inline-block;
+      width:48%;
+      text-align:center;
+      line-height:42px;
+      
+    } 
+    span:first-child{
+      border-right:1px solid #ededed;
+    }
+  }
+  
 }
 </style>

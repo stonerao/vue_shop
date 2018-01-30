@@ -1,3 +1,17 @@
+const ORDER_ROUTER_NAME = '/member/order'
+const myMember = [{
+        name: 'orderInfo',
+        /* 主页 */
+        path: `${ORDER_ROUTER_NAME}/info`,
+        component: r => require.ensure([], () => r(require('@/components/member/order/info')))
+    },
+    {
+        name: 'orderInfo',
+        /* 主页 */
+        path: `${ORDER_ROUTER_NAME}/index`,
+        component: r => require.ensure([], () => r(require('@/components/member/order/index')))
+    },
+]
 export let router = [{
         name: 'my_member',
         /* 主页 */
@@ -7,7 +21,9 @@ export let router = [{
         name: 'order',
         /* 订单 */
         path: '/member/order',
-        component: r => require.ensure([], () => r(require('@/components/member/order')))
+        redirect: '/member/order/index',
+        component: r => require.ensure([], () => r(require('@/components/member/order'))),
+        children: myMember
     }, {
         name: 'coupon',
         /* 优惠券 */

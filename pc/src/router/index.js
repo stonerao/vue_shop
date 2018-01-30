@@ -33,6 +33,7 @@ const routerList = [{
         }
     ]
     // 导出参数
+console.log(routerList)
 export default new Router({
     /*
      * 需要后台配置

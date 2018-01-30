@@ -1,9 +1,9 @@
 <template>
   <ul class="m-memu-list">
-     <li v-for="(item,index) in model" :key="index" class="m-memu-items">
-        <router-link :to="`/member${item.path}`" class="m-memu-title">{{item.name}}</router-link>
+     <router-link tag="li" :to="`/member${item.path}`" v-for="(item,index) in model" :key="index" class="m-memu-title m-memu-items">
+       <span>{{item.name}}</span> 
         <menus v-if="item.children" :model="item.children" class="m-memu-children"></menus>
-     </li>
+     </router-link>
   </ul>
 </template>
 
@@ -23,14 +23,16 @@ export default {
 
 <style lang="less">
 @color:#f09f0b;
-.m-memu-list {
+.m-memu-list { 
   .m-memu-children {
     .active {
       color: @color;
     }
     .m-memu-title {
       font-size: 14px;
-      line-height: 30px;
+      line-height: 24px;
+      margin-top:3px;
+      margin-bottom:3px;
       font-weight: 400;
       cursor: pointer;
       color: #888;
