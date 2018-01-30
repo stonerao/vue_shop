@@ -54,27 +54,42 @@ export default {
   components: {
     "el-breadcrumb": Breadcrumb,
     "el-breadcrumb-item": BreadcrumbItem,
-    'menus':menu
+    menus: menu
   }
 };
 </script>
 
-<style lang="less" scoped> 
+<style lang="less">
 .m-index {
   .m-box {
-    overflow: hidden;margin-bottom:40px;
+    overflow: hidden;
+    margin-bottom: 40px;
   }
   .m-menu {
-    width: 190px; 
+    width: 190px;
     padding: 28px 0;
   }
   .m-view {
     width: 970px;
-    
-  }
-  .m-menu-view {
-    padding-left: 40px;
   }
 }
-
+.m-menu-view {
+  > li {
+    > span {
+      padding-left: 40px;
+    }
+    > .m-memu-children {
+      .active {
+        border-left: 3px solid #f09f0b;
+        span {
+          color: #f09f0b;
+        }
+      }
+      li {
+        border-left: 3px solid transparent;
+        padding-left: 37px;
+      }
+    }
+  }
+}
 </style>

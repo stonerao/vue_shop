@@ -1,12 +1,10 @@
 <template>
-  <div class="order">
-    <router-view></router-view>
-  </div>
+  <div></div>
 </template>
 
-<script> 
+<script>
 export default {
-  
+    name:"评价"
 };
 </script>
 <style lang="less" scoped>
