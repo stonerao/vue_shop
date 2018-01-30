@@ -28,7 +28,7 @@
 <script>
 import { Pagination } from "element-ui";
 export default {
-  name: "购买过的商品",
+  name: "parst",
   data() {
     return {
       page: {

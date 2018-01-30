@@ -32,7 +32,7 @@ const routerList = [{
             component: r => require.ensure([], () => r(require('@/routing/notFound')))
         }
     ]
-    // 导出参数
+    // 导出参数 
 console.log(routerList)
 export default new Router({
     /*

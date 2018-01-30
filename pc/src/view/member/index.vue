@@ -43,7 +43,7 @@ export default {
           children: [
             { name: "账户余额", path: "/month" },
             { name: "个人资料", path: "/information" },
-            { name: "账务安全", path: "/safety" },
+            { name: "账户安全", path: "/safety" },
             { name: "收货地址", path: "/address" },
             { name: "收货自提柜子", path: "/cabinet" }
           ]
@@ -55,6 +55,9 @@ export default {
     "el-breadcrumb": Breadcrumb,
     "el-breadcrumb-item": BreadcrumbItem,
     menus: menu
+  },
+  mounted () { 
+    console.log(this.$route)
   }
 };
 </script>
