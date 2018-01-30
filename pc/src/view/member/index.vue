@@ -69,7 +69,7 @@ export default {
     padding: 28px 0;
   }
   .m-view {
-    width: 960px;
+    width: 970px;
     
   }
   .m-menu-view {

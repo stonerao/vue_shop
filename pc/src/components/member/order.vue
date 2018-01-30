@@ -52,17 +52,17 @@
         </table> 
       </div> 
       <!-- 分页 -->
-    <div class="o_page">
-      <el-pagination class="center"
-      background
-      @size-change="pageSize"
-      @current-change="curChange"
-      :current-page.sync="page.curpage"
-      :page-size="page.size"
-      layout="prev, pager, next, jumper"
-      :total="page.total">
-    </el-pagination>
-    </div> 
+      <div class="o_page">
+        <el-pagination class="center"
+          background
+          @size-change="pageSize"
+          @current-change="curChange"
+          :current-page.sync="page.curpage"
+          :page-size="page.size"
+          layout="prev, pager, next, jumper"
+          :total="page.total">
+        </el-pagination>
+      </div> 
     </div>
   </div>
 </template>
