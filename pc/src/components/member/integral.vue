@@ -135,6 +135,9 @@ export default {
       text-align: center;
       line-height: 40px;
     }
+    a:hover{
+      background-color: #2DC844;
+    }
   }
 }
 .inte-search {
