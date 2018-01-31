@@ -137,7 +137,7 @@ export default {
       };
       reader.readAsDataURL(files[0]);
     },
-    cropperBtn() { 
+    cropperBtn() {
       if (this.example.img == "") {
         this.Mssage({
           message: "请选择图片",
@@ -165,10 +165,10 @@ export default {
         this.cropperClick();
       });
     },
-    cropperOver(e){
+    cropperOver(e) {
       // 关闭
-      if(e.target.id==='cropper'){
-        this.cropperBoolen=false;
+      if (e.target.id === "cropper") {
+        this.cropperBoolen = false;
       }
     }
   }
@@ -197,17 +197,7 @@ export default {
     }
   }
 }
-.m_f_btn {
-  width: 140px;
-  height: 48px;
-  border-radius: 4px;
-  color: #fff;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  background-color: @color;
-  margin-top: 30px;
-}
+
 .m_border-top {
   border-top: 1px #eaeaea dashed;
   position: relative;

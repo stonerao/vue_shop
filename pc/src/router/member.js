@@ -55,12 +55,12 @@ const SAFETY = [{
         },
         {
             name: 'mobile',
-            /* 列表*/
+            /* 手机*/
             path: `${SAFETY_ROUTER_NAME}/mobile`,
             component: r => require.ensure([], () => r(require('@/components/member/safety/mobile')))
         }, {
             name: 'mail',
-            /* 列表*/
+            /* 邮箱*/
             path: `${SAFETY_ROUTER_NAME}/mail`,
             component: r => require.ensure([], () => r(require('@/components/member/safety/mail')))
         }

@@ -56,8 +56,7 @@ export default {
     "el-breadcrumb-item": BreadcrumbItem,
     menus: menu
   },
-  mounted () { 
-    console.log(this.$route)
+  mounted () {  
   }
 };
 </script>
@@ -71,6 +70,7 @@ export default {
   .m-menu {
     width: 190px;
     padding: 28px 0;
+    min-height:670px;
   }
   .m-view {
     width: 970px;

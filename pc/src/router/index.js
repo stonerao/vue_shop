@@ -32,8 +32,7 @@ const routerList = [{
             component: r => require.ensure([], () => r(require('@/routing/notFound')))
         }
     ]
-    // 导出参数 
-console.log(routerList)
+    // 导出参数  
 export default new Router({
     /*
      * 需要后台配置

@@ -26,6 +26,10 @@ a {
     cursor: pointer;
 }
 
+.hei-color {
+    color: #333;
+}
+
 .hui-color {
     color: #999;
 }
@@ -37,6 +41,7 @@ a {
 .while-f {
     color: #fff;
 }
+
 .color-bulr {
     color: @color-b;
 }
@@ -83,6 +88,7 @@ a {
 .margin-left20 {
     margin-left: 20px;
 }
+
 .margin-left40 {
     margin-left: 40px;
 }
@@ -265,9 +271,11 @@ a {
     background-color: @color-g;
     color: #fff;
 }
-.i_b{
-    display:inline-block;
+
+.i_b {
+    display: inline-block;
 }
+
 #app {
     .i_border {
         .el-input__inner {
@@ -338,9 +346,8 @@ body {
     }
     .line-65 {
         line-height: 65px;
-         
     }
-    .line-40{
+    .line-40 {
         line-height: 40px;
     }
     .width-185 {
@@ -379,10 +386,61 @@ body {
     .width-155 {
         width: 155px;
     }
+    .m_mobile {
+        .el-step__head.is-finish {
+            color: @color;
+            border-color: @color;
+            .el-step__icon {
+                background: @color;
+                color: #fff;
+            }
+        }
+        .el-step__head.is-process {
+            border-color: #dfdfdf;
+            .el-step__icon {
+                width: 34px;
+                height: 34px;
+                background: #dfdfdf;
+                color: #666;
+            }
+        }
+        .el-step__icon {
+            width: 34px;
+            height: 34px;
+        }
+        .el-step.is-horizontal .el-step__line {
+            top: 16px;
+        }
+        .el-step__title.is-finish {
+            color: #333;
+            font-size: 14px;
+        }
+        .el-step__title.is-process {
+            font-weight: 400;
+            font-size: 14px;
+        }
+        .el-step__head.is-wait {
+            color: #333;
+            font-size: 14px;
+        }
+        .el-step__title.is-wait {
+            color: #333;
+        }
+        .el-input-group__append,
+        .el-input-group__prepend {
+            background-color: #42b653;
+            color: #fff;
+            border: 1px solid #42b653;
+            span {
+                color: #fff;
+            }
+        }
+    }
 }
-.m_i_form{
-    .el-radio__input.is-checked+.el-radio__label{
-        color:#333;
+
+.m_i_form {
+    .el-radio__input.is-checked+.el-radio__label {
+        color: #333;
     }
     .el-radio__input.is-checked .el-radio__inner {
         border-color: @color;
