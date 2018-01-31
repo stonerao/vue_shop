@@ -1,6 +1,6 @@
  <template>
   <div>
-      index
+      <router-link to="/member/month/items">充值</router-link>
   </div>
 </template>
 

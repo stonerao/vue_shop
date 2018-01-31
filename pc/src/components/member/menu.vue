@@ -1,7 +1,7 @@
 <template>
   <ul class="m-memu-list">
      <router-link tag="li" :to="`/member${item.path}`" v-for="(item,index) in model" :key="index" class="m-memu-title m-memu-items">
-       <span>{{item.name}}</span> 
+        <span>{{item.name}}</span> 
         <menus v-if="item.children" :model="item.children" class="m-memu-children"></menus>
      </router-link>
   </ul>

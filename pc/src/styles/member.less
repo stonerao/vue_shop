@@ -1,60 +1,80 @@
 @color: #f09f0b;
+@color-g: #29b43d;
+@color-b: #409eff;
 .my-order-nav {
     padding: 0 18px;
     height: 44px;
     line-height: 44px;
     background: #f4f4f4;
-  }
-  .my-order-table {
-    width:100%;
-    tr:last-child{
-      border-bottom:none;
+}
+.m_nav {
+  padding: 0 18px;
+  height:60px;
+  line-height: 60px;
+  background: #f4f4f4;
+}
+
+
+.my-order-table {
+    width: 100%;
+    tr:last-child {
+        border-bottom: none;
     }
     tr {
-      border-bottom:1px solid #eaeaea;
-      width:100%;
-      td {
-        vertical-align: top; 
-      }
-      .my__order_code {
-        padding-top: 40px;
-        p {
-          line-height: 42px;
+        border-bottom: 1px solid #eaeaea;
+        width: 100%;
+        td {
+            vertical-align: top;
         }
-      }
-      .my__order_img {
-        line-height: 183px;
-        img {
-          margin: 0 13px;
+        .my__order_code {
+            padding-top: 40px;
+            p {
+                line-height: 42px;
+            }
         }
-      }
-      .my_order__line {
-        line-height: 183px;
-      }
-      .my_order_shop {
-        padding-top: 60px;
-      }
-      .my_order_shop_price {
-        margin-top: 35px;
-      }
-      .my_order__btn {
-        margin-top: 50px;
-        text-align: center;
-        p{
-          line-height:24px;
-          color:#888;
-          a{
-            color:#888
-          }
+        .my__order_img {
+            line-height: 183px;
+            img {
+                margin: 0 13px;
+            }
         }
-      }
+        .my_order__line {
+            line-height: 183px;
+        }
+        .my_order_shop {
+            padding-top: 60px;
+        }
+        .my_order_shop_price {
+            margin-top: 35px;
+        }
+        .my_order__btn {
+            margin-top: 50px;
+            text-align: center;
+            p {
+                line-height: 24px;
+                color: #888;
+                a {
+                    color: #888
+                }
+            }
+        }
     }
-  }
-  .my__order_info{ 
-    >div.line{
-      padding-top:20px;
-      margin-left:40px;
-    }
-   }
+}
 
-   
+.my__order_info {
+    >div.line {
+        padding-top: 20px;
+        margin-left: 40px;
+    }
+}
+.m_f_btn {
+    width: 140px;
+    height: 48px;
+    border-radius: 4px;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: @color;
+    margin-top: 30px;
+  }

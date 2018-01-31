@@ -1,5 +1,7 @@
 <template>
-  <div>items</div>
+  <div>
+    我是充值页面
+  </div>
 </template>
 
 <script>
