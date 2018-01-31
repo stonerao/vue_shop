@@ -35,17 +35,21 @@
               </div>
             </td> 
             <td class=" center width-155" v-if="index===0" :rowspan="orders.length">
-              <p class="hui-color margin-top60">购买过</p> 
-              <p class="margin-top20">2次</p>
+              <p class="hui-color margin-top60">1件商品</p> 
+              <p class="margin-top20">￥18.00</p>
             </td> 
             <td class=" center width-155" v-if="index===0" :rowspan="orders.length">
-              <p style="line-height:183px;" class="  my_order__line " :class="{'color-g':true}">销售中</p> 
+                <div class="my_order__btn " style="padding-top:5px">  
+                  <p class="margin-bottom10">配送中</p> 
+                  <p class="margin-bottom10 margin-top5"><router-link to="/member/order/info" class=" font-1">查看详情</router-link></p>
+                </div>
             </td> 
             <td  class="width-155">
               <div class="my_order__btn "> 
-              <router-link to="/" class="m_btn margin-bottom10 btn_type_1">再次购买</router-link>
-              <p class="margin-bottom10 margin-top5"> <router-link to="/" class=" font-1">查看详情</router-link></p>
-              <p class="margin-bottom10 margin-top5"><router-link to="/" class=" font-1">再次购买</router-link></p>
+                <router-link to="/member/order/evaluation" class="m_btn margin-bottom10" v-if="i%2==0">评价</router-link>
+                <router-link to="/" class="m_btn margin-bottom10 btn_type_2" v-else>立即付款</router-link>
+                <p class="margin-bottom10 margin-top5"> <router-link to="/member/order/info" class=" font-1">查看详情</router-link></p> 
+                <p class="margin-bottom10 margin-top5"><router-link to="/" class=" font-1">再次购买</router-link></p>
               </div>
             </td>
           </tr>  
