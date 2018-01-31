@@ -63,6 +63,7 @@ export default {
 </script>
 
 <style lang="less">
+@import "../../styles/common.less";
 .m-index {
   .m-box {
     overflow: hidden;
