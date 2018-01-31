@@ -21,7 +21,12 @@
           <li class="pro-detail-item">
             <img src="../../../assets/member/order1.png" alt="">
           </li> -->
+          <!-- 1 -->
+          
         </ul>
+        <li v-for="i in 4" :key="i" :class="{'acitve':i<=2?true:false}">
+            {{i}}
+          </li>
         <div class="order-status">
           <div class="status-detail">
             <div class="order-status-item">
@@ -114,6 +119,7 @@
 </template>
 
 <script>
+// import { list } from "@/assets/member";
 export default {
   data() {  
     return {
