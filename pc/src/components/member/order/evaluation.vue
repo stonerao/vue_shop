@@ -10,24 +10,18 @@
       </div>
       <div class="eva-detail-r">
         <ul>
-          <li>
+          <li v-for="(item,ind) in evaLis" :key="ind">
             <div>
-              <span>商品满意度</span>
-              <el-rate v-model="value1" show-text></el-rate>
+              <span>{{item.title}}</span>
+              <div class="eva-star">
+                <div>
+                  <img :src="i<=item.sate?evaIcon.star2:evaIcon.star1" alt="" v-for="i in 5" :key="i" @click="item.sate=i">
+                  <span>{{lis.num}}分</span>
+                  <span>{{stateText(lis.num)}}</span>
+                </div>
+              </div>              
             </div> 
-          </li>
-          <li>
-            <div>
-              <span>商品包装</span>
-              <el-rate v-model="value2" show-text></el-rate>
-            </div>
-          </li>
-          <li>
-            <div>
-              <span>配送服务</span>
-              <el-rate v-model="value3" show-text></el-rate>
-            </div>
-          </li>
+          </li> 
           <li>
             <div>
               <span>评价</span>
@@ -49,33 +43,57 @@
 </template>
 
 <script>
-import { Rate,Input } from "element-ui";
+import { Input } from "element-ui";
+import {evaIcon} from "@/assets/member";
 export default {
     name:"orderEvaluation",
     data(){
       return{
-        value1:null,
-        value2:null,
-        value3:null,
         textarea:'',
         msg:'',
         has_msg:false,
+        evaIcon:evaIcon,
+        stateText(state){
+          switch(state){
+            case 1:
+            return '很差';
+            case 2:
+            return '较差';
+            case 3:
+            return '一般';
+            case 4:
+            return '满意';
+            case 5:
+            return '非常满意';
+          }
+        },
+        lis:{
+          num:0,
+          state:0,
+          index:0,
+        },
+        evaLis:[
+          {title:'商品满意度',sate:0},
+          {title:'商品包装',sate:0},
+          {title:'配送服务',sate:0}
+        ]
       }
     },
     components:{
-      "el-rate": Rate,
       "el-input":Input
     },
     methods:{
       send(){
         this.msg=this.textarea;
         this.has_msg=true;
-      }
+      },
+     
     }
 };
 </script>
 <style lang="less" scoped>
 @r-color:#ff0000;
+@color: #f09f0b;
 .center{
   text-align:center;
 }
@@ -105,8 +123,9 @@ export default {
         font-size: 16px;
       }
       p{
-        margin-bottom: 10px;
         color:#333;
+        width: 75%;
+        margin: 0 auto 10px auto;
       }
     }
   }
@@ -128,9 +147,6 @@ export default {
             text-align: justify;
             text-align-last: justify;
             float: left;
-        }
-        >div{
-          display: inline-block;
         }
         .el-textarea{
           width: 80%;
@@ -158,6 +174,23 @@ export default {
     }
     li:nth-child(4){
       margin-top: 30px;
+    }
+    div.eva-star{
+      display: inline-block;
+      position: relative;
+      height: 30px;
+      img{
+        margin: 0 2px;
+        width: 26px;
+        height: 25px;
+        float: left;
+        cursor: pointer;
+      }
+      span{
+        display: inline-block;
+        margin-left: 10px;
+        color:@color;
+      }
     }
   }
 }
