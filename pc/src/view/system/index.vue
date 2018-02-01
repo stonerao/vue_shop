@@ -1,5 +1,5 @@
 <template>
-  <div class="main-box m-index"> 
+  <div class="main-box m-index overflow sy_main"> 
       <el-breadcrumb separator-class="el-icon-arrow-right"  class="m-breadcrumb">
         <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
         <el-breadcrumb-item>活动管理</el-breadcrumb-item> 
@@ -14,11 +14,12 @@
 <script>
 import { Breadcrumb, BreadcrumbItem } from "element-ui";
 import menus from "@/components/system/menu";
+import * as fun from "@/utils/axios";
 export default {
   data() {
     return {
       menue: [
-        { name: "会员制度", path: "/member" },
+        { name: "会员制度", path: "/index" },
         { name: "消息通知", path: "/member" },
         { name: "积分规则", path: "/member" },
         { name: "优惠券获取", path: "/member" },
@@ -32,16 +33,29 @@ export default {
     "el-breadcrumb": Breadcrumb,
     "el-breadcrumb-item": BreadcrumbItem,
     "l-menu": menus
+  },
+  mounted() {
+    /* 封装请求参数 */
+    fun.$_ajax("/stone/api").then(res => {
+      console.log(res);
+    });
   }
 };
 </script>
-<style lang="less" scoped> 
+<style lang="less">
 .s-box {
   .s-menu {
-    width: 178px; 
+    width: 178px;
   }
 }
-.s-view{
-  width:975px; 
+.s-view {
+  width: 975px;
+}
+.s_box {
+  padding: 0 20px;
+  padding-bottom: 60px;
+}
+.sy_main {
+  padding-bottom: 40px;
 }
 </style>

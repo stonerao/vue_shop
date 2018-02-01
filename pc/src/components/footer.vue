@@ -66,7 +66,7 @@ export default {
           {
               title:'购物指南',
               items:[
-                  {title:"购物流程",path:"/"},
+                  {title:"购物流程",path:"/system"},
                   {title:"支付方式",path:"/"},
                   {title:"售后规则",path:"/"},
               ]
@@ -120,6 +120,7 @@ export default {
             li{
                 display:block;
                 width:100%;
+                cursor: pointer;
             }
         }
     }

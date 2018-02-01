@@ -50,14 +50,14 @@ export default {
   name: "",
   data() {
     return {
-      e_name:"邮箱",
+      e_name: "邮箱",
       action: 1,
       mobile: "",
       icon: {
         good: icon
       },
       time: 5,
-      timeFun:null
+      timeFun: null
     };
   },
   components: {
@@ -76,11 +76,11 @@ export default {
         case 2:
           this.action = 3;
           this.allGood(5);
-          break; 
+          break;
       }
     },
-    allGood(state=5) {
-      this.time=state;
+    allGood(state = 5) {
+      this.time = state;
       this.timeFun = setInterval(() => {
         if (this.time == 0) {
           clearInterval(this.timeFun);
@@ -92,7 +92,7 @@ export default {
     }
   },
   destroyed() {
-   clearInterval(this.timeFun);
+    clearInterval(this.timeFun);
   }
 };
 </script>
