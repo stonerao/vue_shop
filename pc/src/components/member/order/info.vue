@@ -6,27 +6,23 @@
           <span>下单时间：{{$Mock.Random.date()}} {{$Mock.Random.time()}}</span>
         </div>
         <ul class="pro-detail">
-          <li class="pro-detail-item" v-for="(imgI,index) in imgLi" :key="index">
-            <img :src="imgI.img1" alt="">
-            <img :src="imgI.img2" alt="">
+          <li v-for="(lis,index) in imgLi" :key="index" :class="{'acitve':index<=2?true:false}"> 
+            <div>
+              <div>
+                <img :src="lis.img1" alt="" v-if="index<=2?false:true">
+                <p v-if="index<=2?false:true">{{lis.msg}}</p>
+              </div>
+              <img :src="lis.img2" alt="" v-if="index<=2?false:true">
+            </div>
+            <div>
+              <div>
+                <img :src="lis.aimg1" alt="" v-if="index<=2?true:false">
+                <p v-if="index<=2?true:false">{{lis.msg}}</p>
+              </div>            
+              <img :src="lis.aimg2" alt="" v-if="index<=2?true:false">
+            </div>
           </li>
-          <!-- <li class="pro-detail-item">
-            <img src="../../../assets/member/order3.png" alt="">
-            <img src="../../../assets/member/order6.png" alt="">
-          </li>
-          <li class="pro-detail-item">
-            <img src="../../../assets/member/order2.png" alt="">
-            <img src="../../../assets/member/order5.png" alt="">
-          </li>
-          <li class="pro-detail-item">
-            <img src="../../../assets/member/order1.png" alt="">
-          </li> -->
-          <!-- 1 -->
-          
         </ul>
-        <li v-for="i in 4" :key="i" :class="{'acitve':i<=2?true:false}">
-            {{i}}
-          </li>
         <div class="order-status">
           <div class="status-detail">
             <div class="order-status-item">
@@ -119,16 +115,16 @@
 </template>
 
 <script>
-// import { list } from "@/assets/member";
+import { orderDetail } from "@/assets/member";
 export default {
   data() {  
     return {
-      active:true,
+      active:3,
       imgLi:[
-        {img1:'',img2:'',aimg1:'',aimg2:''},
-        {img1:'',img2:'',aimg1:'',aimg2:''},
-        {img1:'',img2:'',aimg1:'',aimg2:''},
-        {img1:'',img2:'',aimg1:'',aimg2:''}
+        {img1:orderDetail.sub_order,img2:orderDetail.dots,aimg1:orderDetail.sub_order,aimg2:orderDetail.adots,msg:'提交订单'},
+        {img1:orderDetail.payment,img2:orderDetail.dots,aimg1:orderDetail.payment,aimg2:orderDetail.adots,msg:'支付成功'},
+        {img1:orderDetail.delivery,img2:orderDetail.dots,aimg1:orderDetail.delivery,aimg2:orderDetail.adots,msg:'配送中'},
+        {img1:orderDetail.complete,img2:'',aimg1:orderDetail.complete,aimg2:'',msg:'完成'}
       ],
       info: [
         { name: "商品信息" },
@@ -149,6 +145,7 @@ export default {
 <style lang="less" scoped>
 @o-color: #b6b6b6;
 @r-color:#be4141;
+@g-color:#42b653;
 .border {
   border: 1px solid #eaeaea;
 }
@@ -184,9 +181,45 @@ export default {
   li {
     display: inline-block;
     line-height: 160px;
+    position: relative;
+    height: 100%;
+    width: 25%;
+    text-align: right;
     img {
       vertical-align: middle;
       margin: 0 5px;
+    }
+    >div{
+      position: absolute;
+      height: 100%;
+      left: 0;
+      top: 0;
+      text-align: left;
+      >div{
+        height: 100%;
+        display: inline-block;
+        p{
+          position: absolute;
+          width: 72px;
+          text-align:center;
+          top: 32%;
+          left: 0;
+        }
+      }
+      >img{
+        width: 146px;
+      }
+    }
+    >div:last-child{
+      p{
+        color:@g-color;
+      }
+    }
+  }
+  li:last-child{
+    width: 9%;
+    img:last-child{
+      display: none;
     }
   }
 }
