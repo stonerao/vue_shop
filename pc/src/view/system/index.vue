@@ -36,8 +36,11 @@ export default {
   },
   mounted() {
     /* 封装请求参数 */
-    fun.$_ajax("/stone/api").then(res => {
-      console.log(res);
+   
+    fun.$_ajax({
+      url:"/stone/api"
+    },1).then(res => {
+       
     });
   }
 };
