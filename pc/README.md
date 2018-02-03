@@ -22,7 +22,10 @@ npm run build --report
 
 * assets 图片
 * components 组件
-* routing 子路由
+    > * commodity 商品种类
+    > * member 个人中心
+    > * system 系统消息类
+* routing 子路由 
 * mock 模拟数据
 * router 路由
 * styles 样式表
@@ -38,3 +41,4 @@ npm run build --report
 * element-ui
 * mockjs
 * less 
+

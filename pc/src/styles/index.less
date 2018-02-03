@@ -30,6 +30,10 @@ a {
     color: #333;
 }
 
+.red-color {
+    color: #ff2222;
+}
+
 .hui-color {
     color: #999;
 }
@@ -445,5 +449,31 @@ body {
     .el-radio__input.is-checked .el-radio__inner {
         border-color: @color;
         background: @color;
+    }
+}
+
+.cart {
+    .el-input-number {
+        width: 150px;
+    }
+     
+    .el-checkbox__input.is-checked .el-checkbox__inner,
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner {
+        background-color: @color-g;
+        border-color: @color-g;
+    }
+    .el-checkbox__inner {
+        width: 20px;
+        height: 20px;
+        transform: scale(1)
+    } 
+    .el-checkbox__inner::after{ 
+        height: 14px;
+        left: 6px;
+        top: 1px;
+        width: 4px;
+    }
+    .el-checkbox__input.is-focus .el-checkbox__inner{
+        border-color: @color-g;
     }
 }

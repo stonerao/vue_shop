@@ -60,7 +60,7 @@
             <el-col :span="5" class="overflow">
                 <div class="index-shop-cart cur">
                     <i class="index-icon icon-shop-cart"></i>
-                        购物车
+                        <router-link to="/cart">购物车</router-link>
                     <i class="el-icon-caret-bottom"></i>
                 </div></el-col>
         </el-row> 

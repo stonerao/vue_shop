@@ -3,36 +3,48 @@ import Router from 'vue-router'
 import * as whileList from './while'
 import * as needList from './need'
 import * as memberList from './member'
+import * as commodityList from './commodity'
 Vue.use(Router);
 // 路由列表
-const routerList = [{
-            path: '/',
-            redirect: '/index'
-        },
-        /* 重定向到index */
-        {
-            path: '/index',
-            name: 'index',
-            component: r => require.ensure([], () => r(require('@/view/index/index'))),
-            //按需加载
-        }, {
-            path: "/member",
-            name: 'member',
-            component: r => require.ensure([], () => r(require('@/view/member/index'))),
-            redirect: '/member/index',
-            children: memberList.router /* member 左边 侧栏 */
-        }, {
-            path: "/system",
-            name: 'system',
-            component: r => require.ensure([], () => r(require('@/view/system/index'))),
-            redirect: '/system/index',
-            children: memberList.system /* member 左边 侧栏 */
-        }, {
-            path: "*",
-            component: r => require.ensure([], () => r(require('@/routing/notFound')))
-        }
-    ]
-    // 导出参数  
+const routerList = [
+    {
+        path: '/',
+        redirect: '/index'
+    },
+    /* 重定向到index */
+    {
+        path: '/index',
+        name: 'index',
+        component: r => require.ensure([], () => r(require('@/view/index/index'))),
+        //按需加载
+    }, {
+        path: "/member",
+        name: 'member',
+        component: r => require.ensure([], () => r(require('@/view/member/index'))),
+        redirect: '/member/index',
+        children: memberList.router/* member 左边 侧栏 */
+    }, {
+        path: "/commodity",
+        name: 'commodity',
+        component: r => require.ensure([], () => r(require('@/view/commodity/index'))),
+        redirect: '/commodity/index',
+        children:commodityList.router
+    }, {
+        path: "/cart",
+        name: 'cart',
+        component: r => require.ensure([], () => r(require('@/view/cart/index')))
+    }, {
+        path: "/system",
+        name: 'system',
+        component: r => require.ensure([], () => r(require('@/view/system/index'))),
+        redirect: '/system/index',
+        children: memberList.system/* member 左边 侧栏 */
+    }, {
+        path: "*",
+        component: r => require.ensure([], () => r(require('@/routing/notFound')))
+    }
+]
+// 导出参数
 export default new Router({
     /*
      * 需要后台配置
@@ -50,7 +62,7 @@ export default new Router({
         if (savedPosition) {
             return savedPosition
         } else {
-            return { x: 0, y: 0 }
+            return {x: 0, y: 0}
         }
     }
 })

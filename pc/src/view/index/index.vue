@@ -91,6 +91,7 @@ import Headers from "@/components/header";
 import { Carousel, CarouselItem } from "element-ui";
 
 export default {
+  name:"Index",
   data() {
     return {
       banner: require("@/assets/index/banner.jpg"),
@@ -115,8 +116,11 @@ export default {
     }
   },
   mounted() {
+     
     /* 推荐 */
-    this.$http("/apis/indexRecommend").then(res => {
+    this.$http("/apis/indexRecommend",{
+
+    }).then(res => {
       if (res.data.code === 200) {
         const data = res.data.data;
         this.recommend.list = [];
