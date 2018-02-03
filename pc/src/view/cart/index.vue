@@ -186,11 +186,11 @@ export default {
       }
     }
   }
-  tbody tr{
-      border-bottom:1px solid #f5f5f5;
+  tbody tr {
+    border-bottom: 1px solid #f5f5f5;
   }
-  tbody tr:first-child{
-      border-top:1px solid #f5f5f5;
+  tbody tr:first-child {
+    border-top: 1px solid #f5f5f5;
   }
   .c_c {
     line-height: 24px;
