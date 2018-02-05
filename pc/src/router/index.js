@@ -17,28 +17,33 @@ const routerList = [
         name: 'index',
         component: r => require.ensure([], () => r(require('@/view/index/index'))),
         //按需加载
-    }, {
+    }, {/* 会员中心 */
         path: "/member",
         name: 'member',
         component: r => require.ensure([], () => r(require('@/view/member/index'))),
         redirect: '/member/index',
         children: memberList.router/* member 左边 侧栏 */
-    }, {
+    }, {/* 商品 */
         path: "/commodity",
         name: 'commodity',
         component: r => require.ensure([], () => r(require('@/view/commodity/index'))),
         redirect: '/commodity/index',
-        children:commodityList.router
-    }, {
+        children: commodityList.router
+    }, {/* 购物车 */
         path: "/cart",
         name: 'cart',
         component: r => require.ensure([], () => r(require('@/view/cart/index')))
-    }, {
+    }, {/* 系统消息  */
         path: "/system",
         name: 'system',
         component: r => require.ensure([], () => r(require('@/view/system/index'))),
         redirect: '/system/index',
         children: memberList.system/* member 左边 侧栏 */
+    }, {/* 订单  */
+        path: "/order", 
+        component: r => require.ensure([], () => r(require('@/view/order/index'))),
+        redirect: '/order/index',
+        children: commodityList.Order
     }, {
         path: "*",
         component: r => require.ensure([], () => r(require('@/routing/notFound')))

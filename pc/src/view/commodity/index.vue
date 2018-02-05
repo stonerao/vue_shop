@@ -1,37 +1,25 @@
 <template>
-  <div class="main-box commodity" >
-        <div class="relatvie">
-            <el-breadcrumb separator-class="el-icon-arrow-right" class="m-breadcrumb">
-                <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-                <el-breadcrumb-item class="common__h">
-                    <span>精品果蔬</span>  
-                    <ul class="absolute common__h_list" v-if="h_list">
-                        <li v-for="(item,index) in hoverNavs" :key="index">{{item.name}}</li>
-                    </ul>
-                </el-breadcrumb-item> 
-                <el-breadcrumb-item><span class="color cur">叶菜类</span></el-breadcrumb-item> 
-            </el-breadcrumb> 
-           
-        </div>
-        
-      <router-view></router-view>
+  <div class="main-box commodity">
+    <div class="relatvie">
+       <NavBar/>
+    </div>
+    <router-view></router-view>
   </div>
 </template>
 
-<script>
-import { Breadcrumb, BreadcrumbItem } from "element-ui";
-import { navs } from "@/assets";
+<script> 
+import NavBar from "@/components/commodity/nav";
 export default {
   name: "Commodity",
   data() {
-    return {
-      hoverNavs: navs,
-      h_list:true
+    return { 
     };
   },
+  mounted () {
+      
+  },
   components: {
-    "el-breadcrumb": Breadcrumb,
-    "el-breadcrumb-item": BreadcrumbItem
+    NavBar
   }
 };
 </script>
@@ -53,9 +41,9 @@ export default {
     top: 32px;
     left: 30px;
     display: none;
-    transition:all .2s;
-    height:0;
-    overflow:hidden;
+    transition: all 0.2s;
+    height: 0;
+    overflow: hidden;
     li {
       line-height: 34px;
       cursor: pointer;
@@ -64,12 +52,12 @@ export default {
     li:hover {
       background: #f7f7f7;
     }
-  } 
-  .common__h:hover{
-      .common__h_list{
-          display:block;
-          height:auto;
-      }
+  }
+  .common__h:hover {
+    .common__h_list {
+      display: block;
+      height: auto;
+    }
   }
 }
 </style>
