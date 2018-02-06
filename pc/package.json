@@ -12,11 +12,14 @@
   "dependencies": {
     "axios": "^0.17.1",
     "element-ui": "^2.0.11",
+    "jquery": "^3.3.1",
     "mockjs": "^1.0.1-beta3",
     "vue": "^2.2.6",
     "vue-cropper": "^0.2.9",
     "vue-lazyload": "^1.1.4",
     "vue-router": "^2.5.3",
+    "vue-slick": "^1.1.12",
+    "vue2.0-zoom": "^2.1.1",
     "vuex": "^2.3.1"
   },
   "devDependencies": {

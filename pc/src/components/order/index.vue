@@ -234,7 +234,7 @@
 						<span class="float-right red-color">￥3557.00</span>
 					</p>
 					<p>
-						<button class="float-right order_btn">提交订单</button>
+						<router-link to="/order/index">	<button class="float-right order_btn">提交订单</button></router-link> 
 					</p>
 				</div>
 			</div>

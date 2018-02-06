@@ -1,57 +1,62 @@
 <template>
   <div class="cart">
-      <div class="main-box">
-          <table class="cart_table">
-              <thead>
-                  <tr>
-                      <td><el-checkbox v-model="allChecked" size="small">&nbsp;全选</el-checkbox></td> 
-                      <td class="center">商品</td>
-                      <td class="center">单价（元）</td>
-                      <td class="center">数量</td>
-                      <td class="center">小计（元）</td>
-                      <td class="center">操作</td>
-                  </tr>
-              </thead> 
-              <tbody>
-                  <tr v-for="(item,index) in items" :key="index">
-                      <td  style="width:70px">
-                       <el-checkbox v-model="checked" :label="item.id" size="small">&nbsp;</el-checkbox>
-                      </td>
-                      <td class="c_t_i" style="width:520px">
-                          <img v-lazy="item.img_url" class="img-center">
-                          <div class="c_t_t shop__text d-">
-                              {{item.name}}
-                          </div>
-                      </td>
-                      <td  class="center font-3" style="width:129px">￥{{item.price}}</td>
-                      <td  class="center"  style="width:152px">
-                          <el-input-number v-model="item.number" :min="1" label="描述文字"></el-input-number>
-                      </td>
-                      <td  class="center red-color font-3" style="width:159px">￥{{parseFloat(item.price*item.number).toFixed(2)}}</td>
-                      <td  class="center c_c" style="width:100px">
-                        <p>收藏</p>  
-                        <p>删除</p>
-                        </td> 
-                  </tr>
-              </tbody>
-            <tfoot> 
-                  <tr>
-                      <td colspan="2" class="text-left">
-                           <el-checkbox v-model="allChecked" size="small">&nbsp;全选</el-checkbox>  
-                          <span class="margin-left20 hui-color cur">删除选中的商品</span>
-                          <span class="margin-left40 hui-color">
-                              共 
-                              <a class="font-3">2 </a>件商品，已选择
-                              <a class="font-3">2 </a>件
-                          </span>
-                      </td> 
-                      <td colspan="4" class="text-right">
-                        以优惠 <a class="red-color">0</a> 元，合计（不含运费）：<span class="red-color font-4">￥{{allPrice}}</span><button class="cart_btn">去结算</button>
-                      </td> 
-                  </tr> 
-            </tfoot>
-          </table> 
-      </div>
+    <div class="main-box">
+      <table class="cart_table">
+        <thead>
+          <tr>
+            <td>
+              <el-checkbox v-model="allChecked" size="small">&nbsp;全选</el-checkbox>
+            </td>
+            <td class="center">商品</td>
+            <td class="center">单价（元）</td>
+            <td class="center">数量</td>
+            <td class="center">小计（元）</td>
+            <td class="center">操作</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(item,index) in items" :key="index">
+            <td style="width:70px">
+              <el-checkbox v-model="checked" :label="item.id" size="small">&nbsp;</el-checkbox>
+            </td>
+            <td class="c_t_i" style="width:520px">
+              <img v-lazy="item.img_url" class="img-center">
+              <div class="c_t_t shop__text d-">
+                {{item.name}}
+              </div>
+            </td>
+            <td class="center font-3" style="width:129px">￥{{item.price}}</td>
+            <td class="center" style="width:152px">
+              <el-input-number v-model="item.number" :min="1" label="描述文字"></el-input-number>
+            </td>
+            <td class="center red-color font-3" style="width:159px">￥{{parseFloat(item.price*item.number).toFixed(2)}}</td>
+            <td class="center c_c" style="width:100px">
+              <p>收藏</p>
+              <p>删除</p>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2" class="text-left">
+              <el-checkbox v-model="allChecked" size="small">&nbsp;全选</el-checkbox>
+              <span class="margin-left20 hui-color cur">删除选中的商品</span>
+              <span class="margin-left40 hui-color">
+                共
+                <a class="font-3">2 </a>件商品，已选择
+                <a class="font-3">2 </a>件
+              </span>
+            </td>
+            <td colspan="4" class="text-right">
+              以优惠
+              <a class="red-color">0</a> 元，合计（不含运费）：
+              <span class="red-color font-4">￥{{allPrice}}</span>
+              <button class="cart_btn" @click="settlement">去结算</button>
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
   </div>
 </template>
 
@@ -93,7 +98,11 @@ export default {
     "el-checkbox": Checkbox,
     "el-input-number": InputNumber
   },
-  methods: {},
+  methods: {
+    async settlement() {
+      this.$router.push('/order/index')
+    }
+  },
   computed: {
     allPrice() {
       let num = 0;
