@@ -158,7 +158,9 @@ export default {
     },
     searchBtn() {
       /* 点击搜索 */
-      this.searchClear();
+      this.searchClear().then(()=>{
+        this.$router.push("/commodity/index")
+      });
     },
     async searchClear() {
       this.serach.val = "";

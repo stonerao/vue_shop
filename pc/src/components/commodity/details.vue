@@ -79,14 +79,55 @@
       <!-- right -->
       <div class="de_box_right">
         <div class="de_r_title">
-          <span :class="{'active':tabIndex===0}">商品详情</span>
-          <span class="" :class="{'active':tabIndex===1}">商品评价</span>
+          <span :class="{'active':tabIndex===0}" @click="tabIndex=0">商品详情</span>
+          <span class="" :class="{'active':tabIndex===1}" @click="tabIndex=1">商品评价</span>
         </div>
         <div class="main-edito" v-if="tabIndex===0">
-
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi nam nihil nulla exercitationem sequi. Quos, impedit dolore nobis quod eum excepturi natus veniam pariatur inventore iste suscipit possimus unde voluptas.
         </div>
         <div class="de-r" v-if="tabIndex===1">
-
+          <div class="de_r_head">
+            <div class="de_r_stat">
+              <p class="de_r_stat_title font-3">总体满意</p>
+              <p class="de_r_stat_price">4.8</p>
+              <p class="de_r_stat_s">
+                <img :src="item<=stateIcon.state?stateIcon.icon1:stateIcon.icon" alt="" v-for="item in 5" :key="item" class="cur">
+              </p>
+              <p>评论人数</p>
+            </div>
+            <div class="de_r_num">
+              <ul>
+                <li>
+                  <div>好评</div>
+                  <div>
+                    <img :src="item<=stateIcon.state?stateIcon.icon1:stateIcon.icon" alt="" v-for="item in 5" :key="item" class="cur img-center">
+                  </div>
+                  <div class="margin-left20">
+                    66%
+                  </div>
+                </li>
+                <li>
+                  <div>中评</div>
+                  <div>
+                    <img :src="item<=stateIcon.state?stateIcon.icon1:stateIcon.icon" alt="" v-for="item in 5" :key="item" class="cur img-center">
+                  </div>
+                  <div class="margin-left20">
+                    66%
+                  </div>
+                </li>
+                <li>
+                  <div>差评</div>
+                  <div>
+                    <img :src="item<=stateIcon.state?stateIcon.icon1:stateIcon.icon" alt="" v-for="item in 5" :key="item" class="cur img-center">
+                  </div>
+                  <div class="margin-left20">
+                    66%
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div></div>
+          </div>
         </div>
       </div>
     </div>
@@ -96,6 +137,8 @@
 <script>
 import Number from "@/components/component/number";
 import vueMagnify from "@/components/magnify";
+import icon from "@/assets/member/eva1.png";
+import icon1 from "@/assets/member/eva2.png";
 export default {
   data() {
     return {
@@ -114,7 +157,12 @@ export default {
         height: 448
       },
       num: 10,
-      tabIndex: 0
+      tabIndex: 1,
+      stateIcon: {
+        icon: icon,
+        icon1: icon1,
+        state: 1
+      }
     };
   },
   methods: {},
@@ -129,7 +177,53 @@ export default {
 
  <style lang="less" scoped>
 @import "../../styles/base.less";
+.de_r_num {
+  float: left;
+  width: 390px;
+  margin-left: 25px;
+  li {
+    line-height: 44px;
+    > div:first-child {
+      width: 40px;
+    }
+    div {
+      display: inline-block;
+    }
+    img {
+      height: 18px;
+      margin: 0 3px;
+    }
+  }
+}
+.de_r_stat_s {
+  margin-top: 4px;
+  margin-bottom: 9px;
+  img {
+    height: 18px;
+    margin: 0 3px;
+  }
+}
+.de_r_stat_price {
+  font-size: 40px;
+  color: #d7282d;
+  font-weight: 700;
+}
+.de_r_head {
+  margin-top: 20px;
+  overflow: hidden;
+}
+.de_r_stat_title {
+  line-height: 42px;
+}
+.de_r_stat {
+  width: 180px;
+  float: left;
+  text-align: center;
+  border-right: 1px solid #ddd;
+  margin-bottom: 20px;
+}
 .main-edito {
+  padding: 20px 10px;
   img {
     max-width: 100%;
   }
@@ -137,8 +231,10 @@ export default {
 .de_box_right {
   width: 862px;
   float: right;
+  border: 1px solid #ddd;
+  min-height: 200px;
   .de_r_title {
-    border: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
     line-height: 48px;
     background: #f4f4f5;
     font-size: 16px;

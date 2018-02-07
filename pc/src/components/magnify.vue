@@ -77,10 +77,7 @@ export default {
       this.bWidth = this.imgBox.offsetWidth;
       this.bHeight = this.imgBox.offsetHeight;
     }
-  },
-  created(){
-      console.log(this)
-  }
+  } 
 };
 </script>
 
