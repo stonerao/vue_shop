@@ -23,7 +23,7 @@
       </ul> 
       <div class="dity_group">
           <div class="dity_items">
-              <div class="dity_item" v-for="item in 10" :key="item">
+              <div class="dity_item" v-for="item in 10" :key="item" @click="details">
                   <div class="dity_item_img">
                       <img v-lazy="$Mock.Random.dataImage('190x190')" alt="">
                   </div>
@@ -110,6 +110,9 @@ export default {
     },
     curChange(e) {
       /* 翻页 */
+    },
+    details(){
+      this.$router.push("./details")
     }
   },
   components: {

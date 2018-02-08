@@ -126,7 +126,49 @@
                 </li>
               </ul>
             </div>
-            <div></div>
+            <div class="de_evaluate margin-top20">
+              <p>
+                <button class="font-3 cur">我要评价</button>
+              </p>
+              <p class="  font-1 margin-top20">只有购买商品才能评价</p>
+            </div>
+          </div>
+          <div class="evaluate">
+            <span class="active">全部评论（154）</span>
+            <span>好评（54）</span>
+            <span>中评（50）</span>
+            <span>差评（50）</span>
+          </div>
+          <div class="evaluate_list">
+            <div class="evaluate_group" v-for="item in 10" :key="item">
+              <div class="evaluate_tou">
+                <img :src="$Mock.Random.dataImage('400x400')" alt="">
+                <p class="margin-top10">
+                  <span class="evaluate_dj">
+                    <a class="font-1">V1</a>
+                  </span>
+                  <span class="font-1">stonerao</span>
+                </p>
+              </div>
+              <div class="evaluate_ev">
+                <p class="de_r_stat_s">
+                  <img :src="item<=stateIcon.state?stateIcon.icon1:stateIcon.icon" alt="" v-for="item in 5" :key="item" class="cur">
+                </p>
+                <p class="font-1 hui-color">
+                  2018-2-8 09:55:36
+                </p>
+                <p class="line shop__text font-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio ad ea, eius molestiae fuga necessitatibus, repellat voluptate commodi fugiat consequatur, architecto aut officia esse ducimus vel animi a quidem atque!</p>
+                <div class="font-1 evaluate_shop">
+                  <span class="color-g font-1">e菜市回复：</span>
+                  <a class="font-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate voluptatem nam maxime dolorem. Qui, deserunt tempore et velit vel saepe animi, maiores vitae assumenda corporis voluptates! Officia reprehenderit rerum mollitia.</a>
+                </div>
+              </div>
+            </div>
+            <!-- page -->
+            <div class="o_page">
+              <el-pagination class="center" background @size-change="pageSize" @current-change="curChange" :current-page.sync="page.curpage" :page-size="page.size" layout="prev, pager, next, jumper" :total="page.total">
+              </el-pagination>
+            </div>
           </div>
         </div>
       </div>
@@ -139,6 +181,7 @@ import Number from "@/components/component/number";
 import vueMagnify from "@/components/magnify";
 import icon from "@/assets/member/eva1.png";
 import icon1 from "@/assets/member/eva2.png";
+import { Pagination } from "element-ui";
 export default {
   data() {
     return {
@@ -161,14 +204,27 @@ export default {
       stateIcon: {
         icon: icon,
         icon1: icon1,
-        state: 1
+        state: 3
+      },
+      page: {
+        curpage: 3,
+        total: 100,
+        size: 10
       }
     };
   },
-  methods: {},
+  methods: {
+    pageSize(e) {
+      /* 页数发生改变的时候 */
+    },
+    curChange(e) {
+      /* 翻页 */
+    }
+  },
   components: {
     vueMagnify,
-    Number
+    Number,
+    "el-pagination": Pagination
   },
   watch: {},
   mounted() {}
@@ -177,6 +233,82 @@ export default {
 
  <style lang="less" scoped>
 @import "../../styles/base.less";
+.margin-top10 {
+  margin-top: 10px;
+}
+.evaluate_list {
+  border-top: 1px solid #ddd;
+  margin: 0 30px;
+  .evaluate_ev {
+    width: 655px;
+    display: inline-block;
+    .de_r_stat_s {
+      position: relative;
+      left: -5px;
+    }
+    .shop__text {
+      margin-top: 10px;
+    }
+  }
+  .evaluate_group {
+    padding: 20px 0;
+    border-bottom: 1px dashed #ddd;
+  }
+  .evaluate_tou {
+    display: inline-block;
+    text-align: center;
+    width: 140px;
+    vertical-align: top;
+    > img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+  .evaluate_shop {
+    background: #f5f5f5;
+    padding: 10px;
+    line-height: 18px;
+  }
+  .evaluate_dj {
+    display: inline-block;
+    padding: 2px;
+    background: @color-j;
+    color: #fff;
+    a,
+    i {
+      color: #fff;
+    }
+  }
+}
+.evaluate {
+  padding-left: 15px;
+  border-top: 1px dashed #ddd;
+  margin: 0 30px;
+  span {
+    margin: 0 30px 0 0px;
+    line-height: 42px;
+    cursor: pointer;
+  }
+  span.active {
+    color: @color;
+  }
+}
+.de_evaluate {
+  text-align: center;
+  button {
+    width: 160px;
+    height: 48px;
+    background: @color-g;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    transition: all 0.2s;
+  }
+  button:hover {
+    background: @color-g*0.8;
+  }
+}
 .de_r_num {
   float: left;
   width: 390px;
@@ -314,7 +446,7 @@ export default {
   }
 }
 .p-color {
-  color: #b4a078;
+  color: @color-j;
 }
 .lin_36 {
   line-height: 36px;

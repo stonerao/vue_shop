@@ -61,11 +61,29 @@
             </ul>
           </div>
         </el-col>
-        <el-col :span="5" class="overflow">
+        <el-col :span="5">
           <div class="index-shop-cart cur">
             <i class="index-icon icon-shop-cart"></i>
             <router-link to="/cart">购物车</router-link>
             <i class="el-icon-caret-bottom"></i>
+            <div class="index-shop_cart">
+              <div class="shop_cart_list">
+                <img v-lazy='  this.$Mock.Random.dataImage("50x50")' alt="">
+                <div> 
+                  <p class="shop__text font-1">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat consectetur aliquid, voluptate veritatis qui earum error repellendus sapiente fuga perferendis nam minima velit nisi quia incidunt, quaerat hic nihil voluptates.
+                  </p>
+                  <p>
+                    <b class="font-1 margin-left10 line">￥54.0</b><a class="font-1">x1</a>
+                    <span class="cur font-1 float-right line cur">删除</span>
+                  </p>
+                </div>
+              </div>
+              <div class="cart_go overflow">
+                <span class="font-1">共两件商品，总计4110.90远</span>
+                <button class="font-1 float-right cur">去购物车</button>
+              </div>
+            </div>
           </div>
         </el-col>
       </el-row>
@@ -80,9 +98,16 @@
           </div>
           <div class="navs-list" v-show="navs.listView">
             <ul class="navs-list-items">
-              <li v-for="(item,index) in navs.items" :key="index">
+              <li v-for="(item,index) in navs.items" :key="index" class="navs-items-hover">
                 <div class="navs-imgbox"><img :src="item.icon" :alt="item.name"></div>
                 <span>{{item.name}}</span>
+                <div class="navs-items-group">
+                  <ul>
+                    <li v-for="item in 10" :key="item" :class="item===2?'active':''">
+                      {{$Mock.Random.cword(3, 5)}}
+                    </li>
+                  </ul>
+                </div>
               </li>
             </ul>
           </div>
@@ -158,8 +183,8 @@ export default {
     },
     searchBtn() {
       /* 点击搜索 */
-      this.searchClear().then(()=>{
-        this.$router.push("/commodity/index")
+      this.searchClear().then(() => {
+        this.$router.push("/commodity/index");
       });
     },
     async searchClear() {
@@ -183,4 +208,5 @@ export default {
 </script>
 <style  lang="less" scoped>
 @import "../styles/public.less";
+
 </style>
