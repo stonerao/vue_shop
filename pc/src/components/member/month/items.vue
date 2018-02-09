@@ -6,9 +6,9 @@
         <li v-for="(mitem,index) in mon" :key="index" :class="{'act':state==index}" @click="stateClick(index)">
           <span>{{mitem.num}}</span>元
           <div v-if="state==index">
-            <div class="act-show"></div>         
-            <img src="../../../assets/member/pay3.png" alt="">   
-          </div>         
+            <div class="act-show"></div>
+            <img src="../../../assets/member/pay3.png" alt="">
+          </div>
         </li>
       </ul>
     </div>
@@ -24,12 +24,12 @@
     <div class="pay-methods re-item">
       <p class="title">选择支付方式</p>
       <div>
-          <el-radio class="radio" v-model="radio" label="1">
-            <img src="../../../assets/member/pay1.png" alt="">
-          </el-radio>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           
-          <el-radio class="radio" v-model="radio" label="2">
-            <img src="../../../assets/member/pay2.png" alt="">
-          </el-radio>
+        <el-radio class="radio" v-model="radio" label="1">
+          <img src="../../../assets/member/pay1.png" alt="">
+        </el-radio>
+        <el-radio class="radio" v-model="radio" label="2">
+          <img src="../../../assets/member/pay2.png" alt="">
+        </el-radio>
       </div>
     </div>
 
@@ -41,8 +41,7 @@
 
 <script>
 //* 充值 */
-import { Radio } from "element-ui";
-import index from "../../../../node_modules/_vue@2.5.13@vue";
+import { Radio } from "element-ui"; 
 export default {
   data() {
     return {
@@ -55,16 +54,16 @@ export default {
   components: {
     "el-radio": Radio
   },
-  methods:{
-    stateClick(index){
-this.state=index;
-this.inp='';
+  methods: {
+    stateClick(index) {
+      this.state = index;
+      this.inp = "";
     }
   },
-  watch: { 
-    inp(state){
-      console.log(state)
-      if(state!==''){
+  watch: {
+    inp(state) {
+      console.log(state);
+      if (state !== "") {
         this.state = null;
       }
     }

@@ -69,12 +69,13 @@
             <div class="index-shop_cart">
               <div class="shop_cart_list">
                 <img v-lazy='  this.$Mock.Random.dataImage("50x50")' alt="">
-                <div> 
+                <div>
                   <p class="shop__text font-1">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Placeat consectetur aliquid, voluptate veritatis qui earum error repellendus sapiente fuga perferendis nam minima velit nisi quia incidunt, quaerat hic nihil voluptates.
                   </p>
                   <p>
-                    <b class="font-1 margin-left10 line">￥54.0</b><a class="font-1">x1</a>
+                    <b class="font-1 margin-left10 line">￥54.0</b>
+                    <a class="font-1">x1</a>
                     <span class="cur font-1 float-right line cur">删除</span>
                   </p>
                 </div>
@@ -184,7 +185,7 @@ export default {
     searchBtn() {
       /* 点击搜索 */
       this.searchClear().then(() => {
-        this.$router.push("/commodity/index");
+        this.$router.push({ name: "list", params: { a: 1 } });
       });
     },
     async searchClear() {
@@ -208,5 +209,4 @@ export default {
 </script>
 <style  lang="less" scoped>
 @import "../styles/public.less";
-
 </style>

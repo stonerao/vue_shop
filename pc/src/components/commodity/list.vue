@@ -69,6 +69,9 @@ export default {
       }
     };
   },
+  created(){
+    console.log(this.$route)
+  },
   mounted() {
     this.h(false);
   },

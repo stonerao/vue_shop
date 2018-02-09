@@ -38,6 +38,8 @@ axios.defaults.transformRequest = [function(data) {
 Vue.prototype.$http = axios;
 /* 路由开始执行代码 */
 router.beforeEach((to, from, next) => {
+        console.log(to)
+
         next();
     })
     /* 路由结束之后执行*/

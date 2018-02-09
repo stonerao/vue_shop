@@ -200,12 +200,12 @@ export default {
         height: 448
       },
       num: 10,
-      tabIndex: 1,
+      tabIndex: 0,//商品介绍和评价tab
       stateIcon: {
         icon: icon,
         icon1: icon1,
         state: 3
-      },
+      },/* 评论星星 */
       page: {
         curpage: 3,
         total: 100,

@@ -8,8 +8,7 @@
 <script> 
 import Headers from "@/components/header";
 import Footers from "@/components/footer";
-import '@/utils/utils'
-import { mapState } from 'vuex'
+import '@/utils/utils' 
 export default { 
   components: {
     Headers,Footers

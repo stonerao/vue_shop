@@ -1,5 +1,5 @@
 import axios from 'axios'
-const HTTP_URL = '';  
+const HTTP_URL = '';
 const req = (obj) => {
     let type = obj.methods || 'get';
     type = type.toUpperCase() || '';
@@ -11,18 +11,18 @@ const req = (obj) => {
         return;
     } else if (type == 'POST' || type == 'DELETE' || type == 'PUT' || type == 'GET') {
         return {
-            methods: !type
-                ? "GET"
-                : type,
-            url:`${HTTP_URL}${url}`,
-            params: type == "GET"
-                ? data || {}
-                : {
+            methods: !type ?
+                "GET" :
+                type,
+            url: `${HTTP_URL}${url}`,
+            params: type == "GET" ?
+                data || {} :
+                {
                     a: 1
                 },
-            data: type == "POST"
-                ? data || {}
-                : {}
+            data: type == "POST" ?
+                data || {} :
+                {}
         };
     } else {
         throw "methods错误";
@@ -33,7 +33,7 @@ export async function $_ajax(obj, state = undefined) {
     const data = await axios(req(obj)).then((res) => {
         /* 可以写公用条件 */
         switch (state) {
-            case 1: 
+            case 1:
                 if (res.data.code == 200) {} else {}
                 break;
         }
