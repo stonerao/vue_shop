@@ -21,5 +21,9 @@ export const Activity = [{
     },{
         name: 'Exchange',
         path: '/activity/exchange',
-        component: r => require.ensure([], () => r(require('@/components/activity/exchange/index')))
+        component: r => require.ensure([], () => r(require('@/components/activity/exchange')))
+    },{
+        name: 'flashSale',
+        path: '/activity/flashSale',
+        component: r => require.ensure([], () => r(require('@/components/activity/flashSale')))
     }]

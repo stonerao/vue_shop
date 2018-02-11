@@ -44,7 +44,7 @@
 
         <div class="ac_box">
             <div class="ac_box_title ac_box_q margin-top30">
-                <i class="_title">显示抢购</i>
+                <i class="_title">限时抢购</i>
                 <div class="ac_box_time  ">
                     <span class="font-3">还剩</span>
                     <span class="ac_box_inter">
@@ -56,7 +56,7 @@
                     </span>
                     <span class="font-3">结束</span>
                 </div>
-                <router-link to="/commodity" class="float-right more_ac">查看更多</router-link>
+                <router-link to="/activity/flashSale" class="float-right more_ac">查看更多</router-link>
             </div>
             <div class="integral_list">
                 <div v-for="item in 5" :key="item">
