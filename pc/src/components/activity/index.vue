@@ -101,7 +101,7 @@
         <div class="ac_box">
             <div class="ac_box_title ac_box_tg margin-top30">
                 <i class="_title">团购活动</i>
-                <router-link to="/commodity" class="float-right more_ac">查看更多</router-link>
+                <router-link to="/activity/group" class="float-right more_ac">查看更多</router-link>
             </div>
             <div class="integral_list">
                 <div v-for="item in 5" :key="item">
