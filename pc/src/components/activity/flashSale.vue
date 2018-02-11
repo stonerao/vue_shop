@@ -20,7 +20,7 @@
                 <p class="color-p">
                     剩余时间 13:23:23
                 </p>
-                <p  class="buy_btn buy_01">
+                <p  class="buy_btn buy_03">
                     <span class="buy_l">
                       <p class="buy_l_top"><em>¥</em>36.00</p>
                       <p class="buy_l_bottom">剩余8件
@@ -47,6 +47,7 @@
 </template>
 <script>
 import { Breadcrumb, BreadcrumbItem ,Pagination, Progress} from "element-ui";
+import "../../styles/common.css";
 
 export default {
   components: {
@@ -80,6 +81,7 @@ export default {
 };
 </script>
 <style lang="less" scoped>
+
   @back:#fff;
   .flash_sale_box{
     .flash_sale_title{
@@ -173,6 +175,7 @@ export default {
         .buy_l_top{color:@color_01;}
         .buy_l_top em{color:@color_01;}
         .buy_r{background-color:@color_01; }
+        .el-progress-bar__inner{background-color:@color_01; }
       }
       .buy_02{
         @color_02:#f3ac02;
@@ -187,6 +190,7 @@ export default {
         .buy_l_top{color:@color_03;}
         .buy_l_top em{color:@color_03;}
         .buy_r{background-color:@color_03; }
+        .buy_l_bottom{color:@color_03 !important; }
       }
     }
   }

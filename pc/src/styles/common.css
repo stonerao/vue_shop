@@ -1,0 +1,43 @@
+.pay-methods .el-radio__input.is-checked + .el-radio__label {
+  color: #f09f0b;
+}
+.pay-methods .el-radio__input.is-checked .el-radio__inner {
+  background-color: #fff;
+  border-color: #f09f0b;
+}
+.pay-methods .el-radio__inner {
+  width: 20px;
+  height: 20px;
+}
+.pay-methods .el-radio__inner::after {
+  width: 8px;
+  height: 8px;
+  background-color: #f09f0b;
+}
+.pay-methods .el-radio__input {
+  margin-right: 10px;
+}
+.reset_progress {
+  float: right;
+  margin-top: 1px;
+}
+.reset_progress .el-progress-bar {
+  width: 90px;
+  padding-right: 0;
+}
+.reset_progress .el-progress-bar__outer {
+  border-radius: 0;
+  background-color: #b8b8b8;
+}
+.reset_progress .el-progress-bar__inner {
+  border-radius: 0;
+}
+.buy_01 .el-progress-bar__inner {
+  background-color: #e01321;
+}
+.buy_02 .el-progress-bar__inner {
+  background-color: #f3ac02;
+}
+.buy_03 .el-progress-bar__inner {
+  background-color: #b8b8b8;
+}
