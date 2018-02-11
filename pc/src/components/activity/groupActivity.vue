@@ -35,7 +35,7 @@
                           <p class="font-1">13：23：23</p>
                       </div>
                   </div>
-                  <router-link to="/activity/details" class="ac_box_all_btn cur">
+                  <router-link to="/" class="ac_box_all_btn cur">
                       参团
                   </router-link>
               </div>
