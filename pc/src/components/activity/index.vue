@@ -77,7 +77,7 @@
                                     <a class="font-3 color-p">188.00</a>
                                 </span>
                                 <span>
-                                    <a class="font-1">￥80.00</a>
+                                    <a class="font-1 text-through">￥80.00</a>
                                 </span>
                             </p>
                             <div class="ac_box_qg_jdt">
@@ -85,7 +85,7 @@
                                     已售120%
                                 </span>
                                 <div class="ac_box_qg_jd">
-                                    <div :style="{'width':`${50/60}%`}"> 
+                                    <div :style="{'width':`${50/60}%`}">
                                     </div>
                                 </div>
                             </div>
@@ -93,6 +93,39 @@
                         <div class="ac_box_qg_btn cur">
                             立即抢购
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ac_box">
+            <div class="ac_box_title ac_box_tg margin-top30">
+                <i class="_title">团购活动</i>
+                <router-link to="/commodity" class="float-right more_ac">查看更多</router-link>
+            </div>
+            <div class="integral_list">
+                <div v-for="item in 5" :key="item">
+                    <div>
+                        <img v-lazy='$Mock.Random.dataImage("200px200")' alt="" class="img-center">
+                    </div>
+                    <p class="integral_text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor voluptatem asperiores architecto, cum et rerum facilis qui deserunt minima quaerat placeat officia ullam exercitationem minus veritatis. Voluptatem animi praesentium eos!
+                    </p>
+
+                    <div class="ac_box_all">
+                        <div class="ac_box_all_pirce">
+                            <div>
+                                <span>￥</span>
+                                <span class="font-5">98.0</span>
+                            </div>
+                            <div>
+                                <p class="font-1 text-through">￥128.00</p>
+                                <p class="font-1">还差3人</p>
+                            </div>
+                        </div>
+                        <router-link to="/" class="ac_box_all_btn cur">
+                            参团
+                        </router-link>
                     </div>
                 </div>
             </div>
@@ -112,41 +145,92 @@ export default {
 
 <style lang="less" scoped>
 @import "../../styles/base.less";
+@tg_color: #ff366b;
+.ac_box_all {
+  height: 48px;
+  background: @tg_color;
+}
+.ac_box_tg {
+  background: @tg_color;
+}
+.ac_box_all_pirce{
+    display:inline-block;
+    width:152px;
+    height:48px;
+    color:#fff;
+    span,a,p{
+        color:#fff;
+    }
+    >div:first-child{
+        width:78px;
+        overflow: hidden;
+        line-height:60px;
+        float: left;
+        padding-left:2px;
+        >span:last-child{
+            position: relative;
+            left:-5px;
+        }
+    }
+    >div:last-child{
+        width:68px;
+        overflow: hidden;
+        line-height:20px;
+        font-size:12px;
+        padding-top:5px;
+    }
+    >div{
+        display:inline-block;
+    }
+}
+.ac_box_all_btn{
+    display:inline-block;
+    width:46px;
+    text-align:center;
+    line-height:48px;
+    color:#e71514;
+    background:#ffed64;
+    font-size:12px;
+    float:right; 
+}
 .ac_box_qg {
   border: 1px solid @color;
   overflow: hidden;
-  margin-top:5px;
+  margin-top: 5px;
   .ac_box_qg_i {
     width: 135px;
+    margin-top: 7px;
+    margin-left: 2px;
     display: inline-block;
-    padding-left:5px; 
+    padding-left: 5px;
   }
   .ac_box_qg_btn {
     display: inline-block;
     width: 35px;
     padding: 10px;
-    background:@color;
-    color:#fff;
-    text-align:center;  
+    background: @color;
+    color: #fff;
+    text-align: center;
+    float: right;
   }
-  .ac_box_qg_jd{
-      margin-left:5px;
-      background:#ccc;
-      height:5px;
-      width:60px;
-      display:inline-block;
-      position: relative;
-      top:-2px;
+  .ac_box_qg_jd {
+    margin-left: 5px;
+    background: #ccc;
+    height: 5px;
+    width: 60px;
+    display: inline-block;
+    position: relative;
+    top: -2px;
   }
-  .ac_box_qg_jd>div{
-      background-color:@color; 
-      height:5px;
-      min-width:5px;
-      float:left;
+  .ac_box_qg_jd > div {
+    background-color: @color;
+    height: 5px;
+    min-width: 5px;
+    float: left;
   }
-  .ac_box_qg_jdt{
-      position: relative;
-      top:3px;
+  .ac_box_qg_jdt {
+    position: relative;
+    top: 3px;
   }
 }
 .integral_list {
