@@ -150,7 +150,7 @@ export default {
           },
           {
             name: "活动中心",
-            path: "/hd"
+            path: "/activity"
           },
           {
             name: "关于e市场",
