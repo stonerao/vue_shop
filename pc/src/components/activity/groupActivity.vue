@@ -3,7 +3,7 @@
         <el-breadcrumb separator-class="el-icon-arrow-right" class="m-breadcrumb">
             <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
             <el-breadcrumb-item :to="{path: '/activity/index'}">活动中心</el-breadcrumb-item>
-            <el-breadcrumb-item>限时抢购</el-breadcrumb-item>
+            <el-breadcrumb-item>团购商品</el-breadcrumb-item>
         </el-breadcrumb>
         <div class="flash_sale_box">
           <div class="flash_sale_title">
@@ -15,20 +15,30 @@
                     <img v-lazy='$Mock.Random.dataImage("291px291")' alt="" class="img-center">
                 </div>
                 <p class="goods_text">
-                    绿鲜知 上海青 小油菜 约400g 火锅刷菜 新鲜蔬菜
+                    绿鲜知 上海青 小油菜 约400g 火锅刷菜 新鲜蔬菜 
                 </p>
-                <p class="color-p">
-                    剩余时间 13:23:23
+                <div class="join_pro">
+                  <el-progress :percentage="70"  :stroke-width="10" :show-text="istxt"></el-progress>
+                </div>
+                <p class="join_info">
+                    <span>已参团 12</span>
+                    <span>总数 30</span>
                 </p>
-                <p  class="buy_btn buy_03">
-                    <span class="buy_l">
-                      <p class="buy_l_top"><em>¥</em>36.00</p>
-                      <p class="buy_l_bottom">剩余8件
-                        <el-progress :percentage="70" class="reset_progress" stroke-width="10" :show-text="istxt"></el-progress>
-                      </p>
-                    </span>
-                    <router-link to='/' class="buy_r">立即抢购</router-link>
-                </p>
+                <div class="ac_box_all">
+                  <div class="ac_box_all_pirce">
+                      <div>
+                          <span>￥</span>
+                          <span class="font-6">98.0</span>
+                      </div>
+                      <div>
+                          <p class="font-1 text-through">距活动开始</p>
+                          <p class="font-1">13：23：23</p>
+                      </div>
+                  </div>
+                  <router-link to="/activity/details" class="ac_box_all_btn cur">
+                      参团
+                  </router-link>
+              </div>
             </div>
           </div>
         </div>
@@ -43,6 +53,9 @@
             :total="page.total">
           </el-pagination>
       </div> 
+      <div class="cover_back">
+        <img src="../../assets/activity/back_img.png" alt="">
+      </div>
     </div>
 </template>
 <script>
@@ -81,8 +94,8 @@ export default {
 };
 </script>
 <style lang="less" scoped>
-
   @back:#fff;
+  @tg_color: #ff366b;
   .flash_sale_box{
     .flash_sale_title{
       background-color: @back;
@@ -101,7 +114,7 @@ export default {
         cursor: pointer;
       }
       .sale_active{
-        background-image: url(../../assets/activity/r_back.png);
+        background-image: url(../../assets/activity/p_back.png);
         color: #fff;
       }
     }
@@ -133,65 +146,76 @@ export default {
         font-size: 14px;
         padding:0 25px;
       }
-      .color-p{
+      .join_info{
         color: #666;
-        margin:13px 0 25px 0;
+        margin:6px 0 16px 0;
         padding:0 25px;
-      }
-      .buy_btn{
-        display: block;
-        box-sizing: border-box;
-        height:65px;
-        .buy_l{
-          display: block;
-          float: left;
-          width:149px;
-          padding:12px 25px 10px 25px;
-          .buy_l_top{
-            font-size: 22px;
-            margin-bottom:7px;
-            em{font-size: 14px;font-style: normal;margin-right: 6px;}
-          }
-          
-          .buy_l_bottom{
-            font-size: 12px;
-            color: #666;
-          }
-        }
-        .buy_r{
-          display: block;
-          width:90px;
-          height: 63px;
-          line-height: 63px;
-          float: right;
-          text-align: center;
-          color: #fff;
-          font-size: 16px;
+        font-size: 12px;
+        span:last-child{
+          float:right;
         }
       }
-      .buy_01{
-        @color_01:#e01321;
-        border:1px solid @color_01;
-        .buy_l_top{color:@color_01;}
-        .buy_l_top em{color:@color_01;}
-        .buy_r{background-color:@color_01; }
-        .el-progress-bar__inner{background-color:@color_01; }
-      }
-      .buy_02{
-        @color_02:#f3ac02;
-        border:1px solid @color_02;
-        .buy_l_top{color:@color_02;}
-        .buy_l_top em{color:@color_02;}
-        .buy_r{background-color:@color_02; }
-      }
-      .buy_03{
-        @color_03:#b8b8b8;
-        border:1px solid @color_03;
-        .buy_l_top{color:@color_03;}
-        .buy_l_top em{color:@color_03;}
-        .buy_r{background-color:@color_03; }
-        .buy_l_bottom{color:@color_03 !important; }
-      }
+      
     }
   }
+.ac_box_all {
+  height: 50px;
+  background: @tg_color;
+}
+.ac_box_tg {
+  background: @tg_color;
+}
+.ac_box_all_pirce{
+    display:inline-block;
+    width:152px;
+    height:50px;
+    color:#fff;
+    padding:0 22px 0 26px;
+    span,a,p{
+        color:#fff;
+    }
+    >div:first-child{
+        width:78px;
+        overflow: hidden;
+        height: 50px;
+        line-height:50px;
+        float: left;
+        // padding-left:2px;
+        >span:last-child{
+            position: relative;
+            left:-5px;
+        }
+    }
+    >div:last-child{
+        width:68px;
+        overflow: hidden;
+        line-height:20px;
+        font-size:12px;
+        padding-top:5px;
+        text-align: right;
+    }
+    >div{
+        display:inline-block;
+    }
+    .font-6{
+      font-size: 22px;
+    }
+}
+.ac_box_all_btn{
+    display:inline-block;
+    width:90px;
+    text-align:center;
+    line-height:50px;
+    color:#e71514;
+    background:#ffed64;
+    font-size:18px;
+    float:right; 
+}
+.cover_back{
+  z-index:-9999;
+  position: fixed;
+  top:0;
+  left:0;
+  img{width:100%;}
+}
 </style>

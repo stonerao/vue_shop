@@ -24,7 +24,7 @@
                     <span class="buy_l">
                       <p class="buy_l_top"><em>¥</em>36.00</p>
                       <p class="buy_l_bottom">剩余8件
-                        <el-progress :percentage="70" class="reset_progress" stroke-width="10" :show-text="istxt"></el-progress>
+                        <el-progress :percentage="70" class="reset_progress" :stroke-width="10" :show-text="istxt"></el-progress>
                       </p>
                     </span>
                     <router-link to='/' class="buy_r">立即抢购</router-link>
