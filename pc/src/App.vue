@@ -14,7 +14,7 @@ export default {
     Headers,Footers
   }, 
   mounted () { 
-     
+    
   }
 }
 </script>
