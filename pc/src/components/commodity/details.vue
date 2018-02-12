@@ -19,7 +19,49 @@
           <span>商业编号：</span>
           <span>654654654654</span>
         </p>
-        <div class="de_head_price">
+        <!-- 来自积分兑换 -->
+        <div class="de_head_price" v-if="this.$route.query.pageId===0">
+          <p>
+            <span>积分换购：</span>
+            <span class="red-color margin-left20">
+              <a class="red-color">￥</a>
+              <a class="red-color font-5">19.00</a>
+            </span>
+
+          </p>
+          <p>
+            <span>零售价：</span>
+            <span class=" margin-left20 p-color">
+              <a class=" p-color">￥</a>
+              <a class="p-color font-5">19.00</a>
+            </span>
+          </p>
+        </div>
+        <!-- 来自限时抢购 -->
+        <div  v-else-if="this.$route.query.pageId===1">
+          <div>商品秒杀
+            <p>
+              <span></span>
+            </p>
+          </div>
+          <div class="de_head_price">
+            <p>
+              <span>秒杀价格：</span>
+              <span class="red-color margin-left20">
+                <a class="red-color">￥</a>
+                <a class="red-color font-5">19.00</a>
+              </span>
+            </p>
+            <p>
+              <span>剩余数量：</span>
+              <span class=" margin-left20 p-color">
+                <a class=" p-color">￥</a>
+                <a class="p-color font-5">19.00</a>
+              </span>
+            </p>
+          </div>
+        </div>
+        <div class="de_head_price" v-else>
           <p>
             <span>零售价：</span>
             <span class="red-color margin-left20">

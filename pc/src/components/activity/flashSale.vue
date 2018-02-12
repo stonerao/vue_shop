@@ -27,7 +27,7 @@
                         <el-progress :percentage="70" class="reset_progress" :stroke-width="10" :show-text="istxt"></el-progress>
                       </p>
                     </span>
-                    <router-link to='/' class="buy_r">立即抢购</router-link>
+                    <router-link :to="{path:'/commodity/details',query:{pageId:1}}" class="buy_r">立即抢购</router-link>
                 </p>
             </div>
           </div>

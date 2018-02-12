@@ -22,7 +22,7 @@
                         188积分
                     </p>
                     <p>
-                        <router-link to='/' class="ex_btn">立即兑换</router-link>
+                        <router-link :to="{path:'/commodity/details',query:{pageId:0}}" class="ex_btn">立即兑换</router-link>
                     </p>
                 </div>
         	</div>
