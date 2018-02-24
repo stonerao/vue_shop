@@ -4,6 +4,7 @@ import Vuex from 'vuex';
 Vue.use(Vuex);
 const state = {
     isHeader: true,
+    isHeaderFooter: true,
     state: 0,
     todos: [
         { id: 1, text: '...', done: true },

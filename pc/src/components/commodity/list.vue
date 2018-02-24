@@ -23,14 +23,14 @@
       </ul> 
       <div class="dity_group">
           <div class="dity_items">
-              <div class="dity_item" v-for="item in 10" :key="item" @click="details">
-                  <div class="dity_item_img">
+              <div class="dity_item" v-for="item in 10" :key="item" >
+                  <div class="dity_item_img" @click="details">
                       <img v-lazy="$Mock.Random.dataImage('190x190')" alt="">
                   </div>
-                  <div class="dity_item_t shop__text">
+                  <div class="dity_item_t shop__text" @click="details">
                     {{$Mock.mock('@cparagraph(1, 3)')}}
                   </div>
-                  <div class="overflow dity_item_cart">
+                  <div class="overflow dity_item_cart" @click="addCart('id')">
                       <span class="price red-color">￥<a class="font-4  red-color">{{$Mock.mock('@integer(60, 100)')}}</a></span>
                       <span class="float-right font-1 cur">加入购物车</span>
                   </div>
@@ -46,6 +46,7 @@
 
 <script>
 import { Pagination } from "element-ui";
+import store from '@/utils/cart'
 export default {
   name: "Commodity",
   data() {
@@ -69,13 +70,16 @@ export default {
       }
     };
   },
-  created(){
-    console.log(this.$route)
+  created(){ 
   },
   mounted() {
     this.h(false);
   },
   methods: {
+    addCart(id){
+      // 加入购物车
+      store.add.call(this,id)
+    },
     sortClick() {
       /* 排序 */
     },

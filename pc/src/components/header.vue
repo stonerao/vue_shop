@@ -13,9 +13,9 @@
         </div>
         <div class="float-right index-top-box">
           <div>
-            <a href="javascript:void(0)">登陆</a>
+            <router-link to="/login" class="cur">登陆</router-link>
             <span href="javascript:void(0)">&nbsp;|&nbsp;</span>
-            <a href="javascript:void(0)">注册</a>
+            <router-link to="/reg" class="cur">注册</router-link>
           </div>
           <div class="relative">
             <router-link to="/member">我的{{name}}
@@ -113,8 +113,8 @@
             </ul>
           </div>
         </div>
-        <ul class="nav-items" v>
-          <router-link to="/" tag="li">
+        <ul class="nav-items">
+          <router-link to="/index" tag="li">
             首页
           </router-link>
           <router-link v-for="(item,index) in navs.list" :to="item.path" tag="li" :key="index">

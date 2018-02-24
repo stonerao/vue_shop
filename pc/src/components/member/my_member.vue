@@ -156,15 +156,15 @@ export default {
     };
   },
   mounted() {
-    this.experience = 50;
-    let loadingInstance = Loading.service({
-      lock: true,
-      text: "正在加载中，请稍等",
-      background: "rgba(0, 0, 0, 0.7)"
-    });
-    setTimeout(() => {
-      loadingInstance.close();
-    }, 500);
+    // this.experience = 50;
+    // let loadingInstance = Loading.service({
+    //   lock: true,
+    //   text: "正在加载中，请稍等",
+    //   background: "rgba(0, 0, 0, 0.7)"
+    // });
+    // setTimeout(() => {
+    //   loadingInstance.close();
+    // }, 500);
   } 
 };
 </script>

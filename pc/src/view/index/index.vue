@@ -65,7 +65,7 @@
             </div>   
             <el-row class="group-rom-list">
               <el-col :span="8" v-for="item in 6" :key="item"><router-link to="/" class="group-rom-link">{{$Mock.mock('@cname')}}</router-link></el-col>
-            </el-row>
+            </el-row>                     
           </div>
           <div class="shop-group-items">
             <el-row>
@@ -95,13 +95,14 @@ export default {
   data() {
     return {
       banner: require("@/assets/index/banner.jpg"),
+      /* 推荐商品 */
       recommend: {
         index: 0,
         list: [],
         items: [],
         adv: {}
       },
-      shop: []
+      // shop: []
     };
   },
   components: {

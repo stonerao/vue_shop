@@ -37,9 +37,15 @@ axios.defaults.transformRequest = [function(data) {
 }]
 Vue.prototype.$http = axios;
 /* 路由开始执行代码 */
+/* 如果含有，顶部和底部将不显示 */
+const headerFooterList = ['/login', '/reg', '/adminl']
 router.beforeEach((to, from, next) => {
-        console.log(to)
-
+        /* 如果含有，顶部和底部将不显示 */
+        if (headerFooterList.indexOf(to.path) !== -1) {
+            store.state.isHeaderFooter = false
+        } else {
+            store.state.isHeaderFooter = true
+        }
         next();
     })
     /* 路由结束之后执行*/
