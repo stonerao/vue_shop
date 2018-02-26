@@ -8,6 +8,13 @@ import router from './router'
 import store from '@/vuex/index';
 
 
+import VueProgressBar from 'vue-progressbar'
+/* 进度条 */
+Vue.use(VueProgressBar, {
+    color: 'rgb(143, 255, 199)',
+    failedColor: 'red',
+    height: '2px'
+})
 import VueLazyload from 'vue-lazyload'
 Vue.use(VueLazyload, {
     preLoad: 1.5,
@@ -46,10 +53,14 @@ router.beforeEach((to, from, next) => {
         } else {
             store.state.isHeaderFooter = true
         }
+        /* 进度条 */
+        Vue.prototype.$Progress.start()
         next();
     })
     /* 路由结束之后执行*/
-router.afterEach(() => {});
+router.afterEach(() => {
+    Vue.prototype.$Progress.finish()
+});
 
 /* eslint-disable no-new */
 new Vue({

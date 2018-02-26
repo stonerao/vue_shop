@@ -1,5 +1,6 @@
 <template>
   <div id="app"> 
+    <vue-progress-bar></vue-progress-bar>
     <Headers v-if="$store.state.isHeaderFooter"></Headers>
     <router-view id="router-view"></router-view> 
     <Footers v-if="$store.state.isHeaderFooter"></Footers>
